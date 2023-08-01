@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "locales": "i18next 'app/**/*.{js,jsx,ts,tsx}' 'components/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "@types/node": "20.4.5",
@@ -24,6 +25,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "i18next-parser": "^8.3.0",
     "next-translate-plugin": "^2.5.2"
   }
 }

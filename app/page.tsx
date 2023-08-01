@@ -1,4 +1,4 @@
-import useTranslation from "next-translate/useTranslation"
+import useTranslation from 'next-translate/useTranslation'
 
 function Home() {
     const { t } = useTranslation('common')
