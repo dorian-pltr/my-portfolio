@@ -1,26 +1,25 @@
-import Link from 'next/link'
+import NextLink from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
+import { Box, Button, Flex, Link, Spacer } from '@chakra-ui/react'
+
 
 const Navbar = () => {
   const { t } = useTranslation('common')
   return (
-    <nav className='bg-gray-800 p-6'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
-          <div className='flex items-center'>
-            <div className='flex-shrink-0'>
-              <Link href='/' className='text-white font-semibold text-xl'>Logo</Link>
-            </div>
-          </div>
-          <div className='hidden md:block'>
-            <div className='ml-4 flex items-center space-x-4'>
-              <Link href='/' className='text-white hover:bg-blue-700 px-3 py-2 rounded-md'>{t('home')}</Link>
-              <Link href='/' className='text-white hover:bg-blue-700 px-3 py-2 rounded-md'>{t('about')}</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Flex as="nav" bg="gray.600" p="2" color="white">
+      <Box>
+        <Link as={NextLink} href="#" fontSize="xl" fontWeight="bold">
+          Logo
+        </Link>
+      </Box>
+      <Spacer />
+      <Box>
+        <Button as={NextLink} href="#" mr="4">
+          {t('home')}
+        </Button>
+        <Button as={NextLink} href="#">{t('about')}</Button>
+      </Box>
+    </Flex>
   )
 }
 

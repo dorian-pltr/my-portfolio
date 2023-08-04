@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import Navbar from '@/components/navbar'
-import '@/styles/global.css'
+import { Providers } from "./providers"
 
 type DashboardLayoutProps = {
   children: React.ReactNode,
@@ -10,8 +12,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <html lang='fr'>
       <body>
-        <nav><Navbar /></nav>
-        {children}
+        <Providers>
+          <nav><Navbar /></nav>
+          {children}
+        </Providers>
       </body>
     </html>
   )
