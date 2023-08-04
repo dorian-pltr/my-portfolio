@@ -57,7 +57,7 @@ export default function Hero() {
             </Button>
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'} >
-            Quels que soient vos projets, qu'ils soient de courte ou de longue durée, je vous encourage vivement à me contacter afin que nous puissions discuter de vos besoins et trouver la meilleure façon de collaborer 😊
+            Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je vous encourage vivement à me contacter afin que nous puissions discuter de vos besoins et trouver la meilleure façon de collaborer 😊
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Button
