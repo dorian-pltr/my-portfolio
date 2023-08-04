@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 import { Box, Button, Flex, Spacer, useColorModeValue } from '@chakra-ui/react'
-import ThemeToggle from './ThemeToggle'
+import ThemeToggle from './themeToggle'
 import Logo from '@/components/logo'
 
 
