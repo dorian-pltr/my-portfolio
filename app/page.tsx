@@ -1,12 +1,10 @@
+'use client'
 import Hero from './hero'
 
-function Home() {
-
-    return (
-        <div>
-            <Hero />
-        </div>
-    );
+export default function Page() {
+  return (
+    <div>
+      <Hero />
+    </div>
+  )
 }
-
-export default Home;

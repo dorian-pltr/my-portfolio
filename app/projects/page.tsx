@@ -1,13 +1,7 @@
-import useTranslation from 'next-translate/useTranslation'
-
-function Page() {
-  const { t } = useTranslation('common')
-
+export default function Page() {
   return (
     <div>
-      <p>{t('projects')}</p>
+      <p>Projets</p>
     </div>
-  );
+  )
 }
-
-export default Page;

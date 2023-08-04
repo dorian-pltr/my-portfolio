@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-const nextTranslate = require('next-translate-plugin')
-
+const nextConfig = {
+  /* config options here */
+}
+// eslint-disable-next-line no-undef
 module.exports = nextConfig
-module.exports = nextTranslate()

@@ -10,6 +10,7 @@
     "locales": "i18next 'app/**/*.{js,jsx,ts,tsx}' 'components/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
@@ -18,19 +19,24 @@
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
-    "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-plugin-react": "^7.33.1",
     "framer-motion": "^10.15.0",
     "next": "13.4.12",
-    "next-translate": "^2.5.2",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.10.1",
-    "typescript": "5.1.6"
+    "react-i18next": "^13.0.3",
+    "react-icons": "^4.10.1"
   },
   "devDependencies": {
-    "i18next-parser": "^8.3.0",
-    "next-translate-plugin": "^2.5.2"
-  }
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "prettier": "3.0.1",
+    "typescript": "^5.1.6"
+  },
+  "main": "index.js",
+  "repository": "git@github-perso:dorian-pltr/my-portfolio.git",
+  "author": "dorian-pltr <pelletierdorian@gmail.com>",
+  "license": "MIT"
 }

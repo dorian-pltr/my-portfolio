@@ -1,16 +1,15 @@
-import { useColorMode, IconButton, Icon } from '@chakra-ui/react'
-import { FaSun, FaMoon } from 'react-icons/fa'
+import { Icon, IconButton, useColorMode } from '@chakra-ui/react'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
-const ThemeToggle = () => {
+export default function ThemeToggle() {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <IconButton
       aria-label="Toggle Dark Mode"
+      size="md"
       icon={colorMode === 'light' ? <Icon as={FaMoon} /> : <Icon as={FaSun} />}
       onClick={toggleColorMode}
     />
   )
 }
-
-export default ThemeToggle
