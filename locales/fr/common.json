@@ -1,5 +1,9 @@
 {
-  "about": "A propos",
+  "about": "À propos",
+  "all-rights-reserved": "Tous droits réservés",
+  "contact": "Me contacter",
   "home": "Accueil",
+  "projects": "Projets",
+  "skills": "Compétences",
   "welcome": "Bienvenue dans mon application !"
 }

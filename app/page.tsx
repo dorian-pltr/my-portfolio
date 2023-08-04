@@ -1,11 +1,10 @@
-import useTranslation from 'next-translate/useTranslation'
+import Hero from './hero'
 
 function Home() {
-    const { t } = useTranslation('common')
 
     return (
         <div>
-            <p>{t('welcome')}</p>
+            <Hero />
         </div>
     );
 }
