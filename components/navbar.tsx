@@ -24,7 +24,7 @@ export default function Navbar() {
       <Center>
         <Button
           as={NextLink}
-          href="/"
+          href="/docs/Dorian_PELLETIER_CV.pdf"
           colorScheme="pink"
           mr="4"
           leftIcon={<DownloadIcon />}
