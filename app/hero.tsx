@@ -1,4 +1,3 @@
-'use client'
 import {
   Button,
   Center,
@@ -35,7 +34,7 @@ export default function Hero() {
                   maxHeight="200"
                   src="images/color_portrait.png"
                   minWidth="auto"
-                  display={{ base: 'initial', md: 'none' }}
+                  display={{ base: 'inherit', md: 'none' }}
                 />
               </Center>
               <Text mt={50} align={{ base: 'center', md: 'left' }}>
@@ -103,7 +102,7 @@ export default function Hero() {
               maxHeight="300"
               src="images/color_portrait.png"
               minWidth="auto"
-              display={{ base: 'none', md: 'initial' }}
+              display={{ base: 'none', md: 'inherit' }}
             />
           </Center>
         </Flex>
@@ -117,12 +116,6 @@ export default function Hero() {
         justify="space-evenly"
         gap={10}
       >
-        {/*<Image*/}
-        {/*  alt="The Shampouineuse"*/}
-        {/*  maxHeight="50"*/}
-        {/*  src="images/the_shampouineuse.png"*/}
-        {/*  minWidth="auto"*/}
-        {/*/>*/}
         <Image
           alt="Urbasolar"
           filter={useColorModeValue('', 'contrast(0)')}

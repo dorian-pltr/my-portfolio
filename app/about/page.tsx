@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
       <Text
-        align={{ base: 'center', md: 'left' }}
+        align="center"
         bgGradient="linear(to-r, purple.400, pink.400, yellow.400)"
         bgClip="text"
         fontWeight="extrabold"

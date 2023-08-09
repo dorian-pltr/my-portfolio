@@ -18,9 +18,9 @@ export default function Navbar() {
       alignItems="center"
     >
       <Logo />
-      <Center display={{ base: 'none', md: 'initial' }}>
-        <MenuItems flexDirection="row" />
-      </Center>
+      <Stack display={{ base: 'none', md: 'inherit' }}>
+        <MenuItems />
+      </Stack>
       <Center>
         <Button
           as={NextLink}
@@ -33,7 +33,7 @@ export default function Navbar() {
           CV
         </Button>
         <ThemeToggle />
-        <Stack ml="4" display={{ base: 'initial', md: 'none' }}>
+        <Stack ml="4" display={{ base: 'inherit', md: 'none' }}>
           <NavbarDrawer />
         </Stack>
       </Center>

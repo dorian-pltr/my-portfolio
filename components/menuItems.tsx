@@ -1,49 +1,37 @@
-import { Button, Flex } from '@chakra-ui/react'
+import { Button, Flex, ResponsiveValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { Property } from 'csstype'
-import FlexDirection = Property.FlexDirection
-import FlexWrap = Property.FlexWrap
-import JustifyContent = Property.JustifyContent
 
-type ResponsiveValue<T> = T | T[]
+type FlexDirection = Property.FlexDirection
+type FlexWrap = Property.FlexWrap
+type JustifyContent = Property.JustifyContent
 
 interface MenuItemsProps {
   flexDirection?: ResponsiveValue<FlexDirection>
   flexWrap?: ResponsiveValue<FlexWrap>
   justifyContent?: ResponsiveValue<JustifyContent>
-  accueil?: boolean
+  displayHome?: boolean
 }
+
+const MenuButton = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <Button as={NextLink} href={href} mr={4} variant="ghost" justifyContent="flex-start">
+    {children}
+  </Button>
+)
 
 export default function MenuItems({
   flexDirection,
   flexWrap,
   justifyContent,
-  accueil,
+  displayHome,
 }: MenuItemsProps) {
   return (
     <Flex flexDirection={flexDirection} flexWrap={flexWrap} justifyContent={justifyContent}>
-      <Button
-        display={accueil ? 'inherit' : 'none'}
-        as={NextLink}
-        href="/"
-        mr={4}
-        variant="ghost"
-        justifyContent="flex-start"
-      >
-        Accueil
-      </Button>
-      <Button as={NextLink} href="/about" mr={4} variant="ghost" justifyContent="flex-start">
-        À propos
-      </Button>
-      <Button as={NextLink} href="/skills" mr={4} variant="ghost" justifyContent="flex-start">
-        Compétences
-      </Button>
-      <Button as={NextLink} href="/projects" mr={4} variant="ghost" justifyContent="flex-start">
-        Projets
-      </Button>
-      <Button as={NextLink} href="/contact" mr={4} variant="ghost" justifyContent="flex-start">
-        Me contacter
-      </Button>
+      {displayHome && <MenuButton href="/">Accueil</MenuButton>}
+      <MenuButton href="/about">À propos</MenuButton>
+      <MenuButton href="/skills">Compétences</MenuButton>
+      <MenuButton href="/projects">Projets</MenuButton>
+      <MenuButton href="/contact">Me contacter</MenuButton>
     </Flex>
   )
 }

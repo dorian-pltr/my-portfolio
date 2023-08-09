@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import Logo from './logo'
@@ -8,6 +6,7 @@ import MenuItems from '@/components/menuItems'
 
 export default function Footer() {
   const year = new Date().getFullYear()
+
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
@@ -16,7 +15,7 @@ export default function Footer() {
     >
       <Container as={Stack} maxW="6xl" py={4} spacing={4} justify="center" align="center">
         <Logo />
-        <MenuItems flexDirection="row" flexWrap="wrap" justifyContent="center" accueil={true} />
+        <MenuItems flexDirection="row" flexWrap="wrap" justifyContent="center" displayHome={true} />
       </Container>
       <Box
         borderTopWidth={1}
