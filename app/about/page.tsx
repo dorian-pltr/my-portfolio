@@ -1,7 +1,18 @@
+'use client'
+
+import { Heading, Text } from '@chakra-ui/react'
+
 export default function Page() {
   return (
-    <div>
-      <p>À propos</p>
-    </div>
+    <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
+      <Text
+        align={{ base: 'center', md: 'left' }}
+        bgGradient="linear(to-r, purple.400, pink.400, yellow.400)"
+        bgClip="text"
+        fontWeight="extrabold"
+      >
+        À propos
+      </Text>
+    </Heading>
   )
 }

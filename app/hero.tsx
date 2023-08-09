@@ -9,6 +9,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
 export default function Hero() {
   return (
@@ -73,11 +74,22 @@ export default function Hero() {
               encourage vivement à me contacter afin que nous puissions discuter de vos besoins et
               trouver la meilleure façon de collaborer 😊
             </Text>
-            <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-              <Button rounded="full" colorScheme="pink">
+            <Stack
+              direction={{ base: 'column', md: 'row' }}
+              spacing={4}
+              mt={{ base: '5', md: '0' }}
+              mb={{ base: '5', md: '0' }}
+            >
+              <Button as={NextLink} rounded="full" colorScheme="pink" href="/contact">
                 Me contacter
               </Button>
-              <Button rounded="full" colorScheme="purple" variant="outline">
+              <Button
+                as={NextLink}
+                rounded="full"
+                colorScheme="purple"
+                variant="outline"
+                href="/about"
+              >
                 À propos
               </Button>
             </Stack>
