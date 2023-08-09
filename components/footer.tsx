@@ -1,10 +1,10 @@
 'use client'
 
-import NextLink from 'next/link'
 import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import Logo from './logo'
 import SocialButton from './socialButton'
+import MenuItems from '@/components/menuItems'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -16,23 +16,7 @@ export default function Footer() {
     >
       <Container as={Stack} maxW="6xl" py={4} spacing={4} justify="center" align="center">
         <Logo />
-        <Stack direction="row" spacing={6}>
-          <Box as={NextLink} href="/">
-            Accueil
-          </Box>
-          <Box as={NextLink} href="/about">
-            À propos
-          </Box>
-          <Box as={NextLink} href="/skills">
-            Compétences
-          </Box>
-          <Box as={NextLink} href="/projects">
-            Projets
-          </Box>
-          <Box as={NextLink} href="/contact">
-            Me contacter
-          </Box>
-        </Stack>
+        <MenuItems flexDirection="row" flexWrap="wrap" justifyContent="center" accueil={true} />
       </Container>
       <Box
         borderTopWidth={1}

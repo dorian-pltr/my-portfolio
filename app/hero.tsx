@@ -7,53 +7,68 @@ import {
   Image,
   Stack,
   Text,
-  useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react'
 
 export default function Hero() {
   return (
     <>
-      <Stack p={20} direction={{ base: 'column', md: 'row' }}>
+      <Stack p={{ base: '10', md: '20' }} direction={{ base: 'column', md: 'row' }}>
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
-            <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-              <Text>Hello, je suis</Text>
+            <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
+              <Text align={{ base: 'center', md: 'left' }}>Hello, je suis</Text>
               <Text
-                as="span"
-                position="relative"
-                ml={5}
-                _after={{
-                  content: "''",
-                  width: 'full',
-                  height: useBreakpointValue({ base: '20%', md: '30%' }),
-                  position: 'absolute',
-                  bottom: 1,
-                  left: 0,
-                  bgGradient: 'linear(to-l, pink.400, purple.400)',
-                  zIndex: -1,
-                }}
+                align={{ base: 'center', md: 'left' }}
+                bgGradient="linear(to-r, purple.400, pink.400, yellow.400)"
+                bgClip="text"
+                fontWeight="extrabold"
               >
                 Dorian PELLETIER
               </Text>
-              <Text mt={50}>Votre développeur Full Stack</Text>
-              <Button colorScheme="purple" size="sm" mr={2}>
-                React
-              </Button>
-              <Button colorScheme="purple" size="sm" mr={2}>
-                Node.js
-              </Button>
-              <Button colorScheme="purple" size="sm" mr={2}>
-                Next.js
-              </Button>
-              <Button colorScheme="purple" size="sm" mr={2}>
-                Airtable
-              </Button>
-              <Button colorScheme="purple" size="sm">
-                Power Automate
-              </Button>
+              <Center>
+                <Image
+                  mt={50}
+                  alt="Mon portrait"
+                  borderRadius="full"
+                  maxHeight="200"
+                  src="images/color_portrait.png"
+                  minWidth="auto"
+                  display={{ base: 'initial', md: 'none' }}
+                />
+              </Center>
+              <Text mt={50} align={{ base: 'center', md: 'left' }}>
+                Votre développeur Full Stack
+              </Text>
+              <Stack
+                mt={5}
+                align={{ base: 'center', md: 'left' }}
+                justify={{ base: 'center', md: 'left' }}
+                direction="row"
+                flexWrap="wrap"
+              >
+                <Button colorScheme="purple" size="sm" mr={2}>
+                  React
+                </Button>
+                <Button colorScheme="purple" size="sm" mr={2}>
+                  Node.js
+                </Button>
+                <Button colorScheme="purple" size="sm" mr={2}>
+                  Next.js
+                </Button>
+                <Button colorScheme="purple" size="sm" mr={2}>
+                  Airtable
+                </Button>
+                <Button colorScheme="purple" size="sm">
+                  Power Automate
+                </Button>
+              </Stack>
             </Heading>
-            <Text fontSize={{ base: 'md', lg: 'lg' }} color="gray.500">
+            <Text
+              fontSize={{ base: 'md', lg: 'lg' }}
+              color="gray.500"
+              align={{ base: 'center', md: 'left' }}
+            >
               Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je vous
               encourage vivement à me contacter afin que nous puissions discuter de vos besoins et
               trouver la meilleure façon de collaborer 😊
@@ -76,11 +91,20 @@ export default function Hero() {
               maxHeight="300"
               src="images/color_portrait.png"
               minWidth="auto"
+              display={{ base: 'none', md: 'initial' }}
             />
           </Center>
         </Flex>
       </Stack>
-      <Flex pr={20} pl={20} direction="row" align="center" justify="space-between">
+      <Flex
+        pr={{ base: '10', md: '20' }}
+        pl={{ base: '10', md: '20' }}
+        direction="row"
+        flexWrap="wrap"
+        align="center"
+        justify="space-evenly"
+        gap={10}
+      >
         {/*<Image*/}
         {/*  alt="The Shampouineuse"*/}
         {/*  maxHeight="50"*/}
