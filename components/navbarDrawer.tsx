@@ -19,6 +19,9 @@ import NextLink from 'next/link'
 export default function NavbarDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef<HTMLButtonElement>(null)
+  const handleMenuItemClick = () => {
+    onClose() // Ferme le tiroir lorsque l'élément du menu est cliqué
+  }
 
   return (
     <>
@@ -31,16 +34,21 @@ export default function NavbarDrawer() {
           <DrawerCloseButton />
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
-            <MenuItems flexDirection="column" displayHome={true} />
+            <MenuItems
+              flexDirection="column"
+              displayHome={true}
+              onItemClick={handleMenuItemClick}
+            />
           </DrawerBody>
-          <DrawerFooter justifyContent="flex-start">
+          <DrawerFooter>
             <Button
               as={NextLink}
               href="/docs/Dorian_PELLETIER_CV.pdf"
               colorScheme="pink"
               mr="4"
               leftIcon={<DownloadIcon />}
-              variant="link"
+              variant="solid"
+              width="100%"
             >
               CV
             </Button>

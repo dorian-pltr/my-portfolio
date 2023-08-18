@@ -18,7 +18,7 @@ export default function Navbar() {
       alignItems="center"
     >
       <Logo />
-      <Stack display={{ base: 'none', md: 'inherit' }}>
+      <Stack display={{ base: 'none', lg: 'inherit' }}>
         <MenuItems />
       </Stack>
       <Center>
@@ -28,12 +28,12 @@ export default function Navbar() {
           colorScheme="pink"
           mr="4"
           leftIcon={<DownloadIcon />}
-          variant="link"
+          variant="solid"
         >
           CV
         </Button>
         <ThemeToggle />
-        <Stack ml="4" display={{ base: 'inherit', md: 'none' }}>
+        <Stack ml="4" display={{ base: 'inherit', lg: 'none' }}>
           <NavbarDrawer />
         </Stack>
       </Center>

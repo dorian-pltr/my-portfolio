@@ -6,9 +6,11 @@ export default function ThemeToggle() {
 
   return (
     <IconButton
+      variant="solid"
       aria-label="Toggle Dark Mode"
-      size="md"
+      colorScheme="yellow"
       icon={colorMode === 'light' ? <Icon as={FaMoon} /> : <Icon as={FaSun} />}
+      color={colorMode === 'light' ? 'white' : 'black'}
       onClick={toggleColorMode}
     />
   )

@@ -47,9 +47,9 @@ const skillsList = (title: string, skills: Array<string>) => {
 const totalExperience = differenceDates('2020-01-01')
 export default function Skills() {
   return (
-    <Box boxShadow="xl" p="6" rounded="md">
+    <Box boxShadow="xl" p={{ base: '1', lg: '6' }} rounded="md">
       <Container maxW="4xl" textAlign="center">
-        <Heading fontSize="3xl" m={10}>
+        <Heading fontSize="3xl" m={{ base: '0', lg: '10' }} marginY={{ base: '10', lg: '0' }}>
           Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
           d&apos;expérience en développement Full Stack, spécialisé dans l&apos;écosystème
           JavaScript
