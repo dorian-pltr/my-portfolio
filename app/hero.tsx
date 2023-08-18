@@ -1,19 +1,24 @@
-import {
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Button, Center, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
+const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
+  return (
+    <Image
+      alt={name}
+      filter="contrast(0)"
+      transition="1s"
+      _hover={{ filter: 'contrast(1)' }}
+      maxHeight={maxHeight}
+      src={imageSrc}
+      minWidth="auto"
+      onClick={() => window.open(url)}
+    />
+  )
+}
 export default function Hero() {
   return (
     <>
-      <Stack p={{ base: '10', md: '20' }} direction={{ base: 'column', md: 'row' }}>
+      <Stack direction={{ base: 'column', md: 'row' }} pb={10}>
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
             <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
@@ -64,11 +69,7 @@ export default function Hero() {
                 </Button>
               </Stack>
             </Heading>
-            <Text
-              fontSize={{ base: 'md', lg: 'lg' }}
-              color="gray.500"
-              align={{ base: 'center', md: 'left' }}
-            >
+            <Text fontSize="xl" color="gray.500" align={{ base: 'center', md: 'left' }}>
               Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je vous
               encourage vivement à me contacter afin que nous puissions discuter de vos besoins et
               trouver la meilleure façon de collaborer 😊
@@ -99,6 +100,7 @@ export default function Hero() {
             <Image
               alt="Mon portrait"
               borderRadius="full"
+              boxShadow="xl"
               maxHeight="300"
               src="images/color_portrait.png"
               minWidth="auto"
@@ -116,28 +118,20 @@ export default function Hero() {
         justify="space-evenly"
         gap={10}
       >
-        <Image
-          alt="Urbasolar"
-          filter={useColorModeValue('', 'contrast(0)')}
-          maxHeight="30"
-          src="images/urbasolar.png"
-          minWidth="auto"
-        />
-        <Image
-          alt="Force Interative"
-          filter={useColorModeValue('', 'contrast(0)')}
-          maxHeight="30"
-          src="images/fi.png"
-          minWidth="auto"
-        />
-        <Image
-          alt="Fabrique Opéra"
-          filter={useColorModeValue('', 'contrast(0)')}
-          maxHeight="50"
-          src="images/fabop.png"
-          minWidth="auto"
-        />
-        <Image alt="UIMM" maxHeight="75" src="images/uimm.png" minWidth="auto" />
+        {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 30)}
+        {companyLogo('images/fi.png', 'Force Interactive', 'https://www.forceinteractive.fr/', 35)}
+        {companyLogo(
+          'images/fabop.png',
+          'La Fabrique Opéra Val de Loire',
+          'https://www.lafabriqueopera-valdeloire.com/',
+          70
+        )}
+        {companyLogo(
+          'images/uimm.png',
+          'UIMM Centre – Val de Loire',
+          'https://www.uimm-regioncentre.com/',
+          75
+        )}
       </Flex>
     </>
   )
