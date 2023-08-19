@@ -3,16 +3,17 @@ import NextLink from 'next/link'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
   return (
-    <Image
-      alt={name}
-      filter="contrast(0)"
-      transition="1s"
-      _hover={{ filter: 'contrast(1)' }}
-      maxHeight={maxHeight}
-      src={imageSrc}
-      minWidth="auto"
-      onClick={() => window.open(url)}
-    />
+    <a href={url} target="_blank" rel="noreferrer">
+      <Image
+        alt={name}
+        filter="contrast(0)"
+        transition="1s"
+        _hover={{ filter: 'contrast(1)' }}
+        maxHeight={maxHeight}
+        src={imageSrc}
+        minWidth="auto"
+      />
+    </a>
   )
 }
 export default function Hero() {
