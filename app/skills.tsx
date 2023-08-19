@@ -49,10 +49,9 @@ export default function Skills() {
   return (
     <Box boxShadow="xl" p={{ base: '1', lg: '6' }} rounded="md">
       <Container maxW="4xl" textAlign="center">
-        <Heading fontSize="3xl" m={{ base: '0', lg: '10' }} marginY={{ base: '10', lg: '0' }}>
+        <Heading fontSize="3xl" m={{ base: '0', lg: '10' }} marginY={{ base: '5', lg: '10' }}>
           Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
-          d&apos;expérience en développement Full Stack, spécialisé dans l&apos;écosystème
-          JavaScript
+          d&apos;expérience en développement Full Stack
         </Heading>
       </Container>
 
@@ -65,8 +64,9 @@ export default function Skills() {
           wrap="wrap"
           borderRight={{ base: 'none', lg: '1px' }}
           borderColor={{ base: 'none', lg: 'gray.500' }}
+          justifyContent="space-between"
         >
-          <Text color="gray.500" fontSize="xl" pt={5}>
+          <Text color="gray.500" fontSize="xl" p={5}>
             Je suis un développeur Fullstack spécialisé dans la création d&apos;applications
             modernes et performantes. Basé à Montpellier, je travaille avec des startups et des
             entreprises en croissance pour les aider à atteindre leurs objectifs business.
