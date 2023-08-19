@@ -47,9 +47,9 @@ const skillsList = (title: string, skills: Array<string>) => {
 const totalExperience = differenceDates('2020-01-01')
 export default function Skills() {
   return (
-    <Box boxShadow="xl" p={{ base: '1', lg: '6' }} rounded="md">
+    <Box boxShadow="xl" p={{ base: '1', lg: '6' }} rounded="md" paddingX={10}>
       <Container maxW="4xl" textAlign="center">
-        <Heading fontSize="3xl" m={{ base: '0', lg: '10' }} marginY={{ base: '5', lg: '10' }}>
+        <Heading fontSize="3xl" marginY={{ base: '5', lg: '10' }}>
           Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
           d&apos;expérience en développement Full Stack
         </Heading>
@@ -58,15 +58,15 @@ export default function Skills() {
       <Flex flexDirection={{ base: 'column', lg: 'row' }}>
         <Flex
           flex={0.5}
-          pr={10}
+          pr={{ base: '0', lg: '10' }}
           pb={5}
-          pl={10}
+          pt={5}
           wrap="wrap"
           borderRight={{ base: 'none', lg: '1px' }}
           borderColor={{ base: 'none', lg: 'gray.500' }}
           justifyContent="space-between"
         >
-          <Text color="gray.500" fontSize="xl" p={5}>
+          <Text color="gray.500" fontSize="xl">
             Je suis un développeur Fullstack spécialisé dans la création d&apos;applications
             modernes et performantes. Basé à Montpellier, je travaille avec des startups et des
             entreprises en croissance pour les aider à atteindre leurs objectifs business.
@@ -75,7 +75,7 @@ export default function Skills() {
             JavaScript avec React, Node.js et Next.js.
           </Text>
         </Flex>
-        <Flex flex={0.5} pr={10} pb={5} pl={10} wrap="wrap" direction="column">
+        <Flex flex={0.5} pl={{ base: '0', lg: '10' }} pb={5} wrap="wrap" direction="column">
           {skillsList('Front-End', frontTechnologies)}
           {skillsList('Back-End', backTechnologies)}
           {skillsList('Gestion de projet', projectManagement)}
