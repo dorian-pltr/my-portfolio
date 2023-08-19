@@ -39,6 +39,8 @@ export default function Hero() {
                   maxHeight="200"
                   src="images/color_portrait.png"
                   minWidth="auto"
+                  _hover={{ transform: 'scale(1.1)' }}
+                  transition="1s"
                   display={{ base: 'inherit', md: 'none' }}
                 />
               </Center>
@@ -104,6 +106,8 @@ export default function Hero() {
               maxHeight="300"
               src="images/color_portrait.png"
               minWidth="auto"
+              _hover={{ transform: 'scale(1.1)' }}
+              transition="1s"
               display={{ base: 'none', md: 'inherit' }}
             />
           </Center>
