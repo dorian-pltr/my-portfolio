@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <Container as={Stack} maxW="6xl" py={4} spacing={4} justify="center" align="center">
         <Logo />
-        <MenuItems flexDirection="row" flexWrap="wrap" justifyContent="center" displayHome={true} />
+        <MenuItems flexDirection="row" flexWrap="wrap" justifyContent="center" />
       </Container>
       <Box
         borderTopWidth={1}

@@ -17,7 +17,6 @@ interface MenuItemsProps {
   flexDirection?: ResponsiveValue<FlexDirection>
   flexWrap?: ResponsiveValue<FlexWrap>
   justifyContent?: ResponsiveValue<JustifyContent>
-  displayHome?: boolean
   onItemClick?: OnItemClickFunction
 }
 
@@ -38,16 +37,13 @@ export default function MenuItems({
   flexDirection,
   flexWrap,
   justifyContent,
-  displayHome,
   onItemClick,
 }: MenuItemsProps) {
   return (
     <Flex flexDirection={flexDirection} flexWrap={flexWrap} justifyContent={justifyContent}>
-      {displayHome && (
-        <MenuButton href="/" onItemClick={onItemClick}>
-          Accueil
-        </MenuButton>
-      )}
+      <MenuButton href="/" onItemClick={onItemClick}>
+        Accueil
+      </MenuButton>
       <MenuButton href="/about" onItemClick={onItemClick}>
         À propos
       </MenuButton>

@@ -27,6 +27,7 @@ export default function Navbar() {
           href="/docs/Dorian_PELLETIER_CV.pdf"
           colorScheme="pink"
           mr="4"
+          ml={4}
           leftIcon={<DownloadIcon />}
           variant="solid"
         >

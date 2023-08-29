@@ -34,11 +34,7 @@ export default function NavbarDrawer() {
           <DrawerCloseButton />
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
-            <MenuItems
-              flexDirection="column"
-              displayHome={true}
-              onItemClick={handleMenuItemClick}
-            />
+            <MenuItems flexDirection="column" onItemClick={handleMenuItemClick} />
           </DrawerBody>
           <DrawerFooter>
             <Button
