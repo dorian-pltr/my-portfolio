@@ -83,6 +83,7 @@ export default function Hero() {
               background={useColorModeValue('gray.50', 'gray.900')}
               p={5}
               rounded="xl"
+              shadow="md"
             >
               <Text mr="2" fontSize="xl" color={useColorModeValue('pink.500', 'pink.200')}>
                 dorian@my-portfolio
@@ -90,7 +91,7 @@ export default function Hero() {
               <Text mr="2" fontSize="xl" color={useColorModeValue('purple.500', 'purple.200')}>
                 ~ $
               </Text>
-              <Text fontSize="xl" color="gray.500" shadow="md">
+              <Text fontSize="xl" color="gray.500">
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
                 besoins et trouver la meilleure façon de collaborer
@@ -105,7 +106,14 @@ export default function Hero() {
               mt={{ base: '5', md: '0' }}
               mb={{ base: '5', md: '0' }}
             >
-              <Button as={NextLink} rounded="xl" colorScheme="purple" href="/contact" width="100%">
+              <Button
+                as={NextLink}
+                rounded="xl"
+                colorScheme="purple"
+                href="/contact"
+                width="100%"
+                shadow="md"
+              >
                 Me contacter
               </Button>
             </Stack>

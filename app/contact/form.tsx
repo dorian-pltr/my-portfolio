@@ -133,7 +133,13 @@ export default function ContactFormWithSocialButtons() {
                     />
                   </FormControl>
 
-                  <Button colorScheme="pink" width="full" isDisabled onClick={() => handleSubmit()}>
+                  <Button
+                    colorScheme="pink"
+                    width="full"
+                    shadow="md"
+                    isDisabled
+                    onClick={() => handleSubmit()}
+                  >
                     Envoyer
                   </Button>
                 </VStack>
