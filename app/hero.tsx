@@ -90,7 +90,7 @@ export default function Hero() {
               <Text mr="2" fontSize="xl" color={useColorModeValue('purple.500', 'purple.200')}>
                 ~ $
               </Text>
-              <Text fontSize="xl" color="gray.500">
+              <Text fontSize="xl" color="gray.500" shadow="md">
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
                 besoins et trouver la meilleure façon de collaborer
