@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Button, Container, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
 
 const frontTechnologies = ['React', 'Next.js', 'Redux', 'Routing', 'TypeScript', 'HTML', 'CSS']
 const backTechnologies = [
@@ -27,7 +27,7 @@ const differenceDates = (stringStartDate: string, stringEndDate?: string | undef
   return { yearDiff, monthDiff }
 }
 
-const skillsList = (title: string, skills: Array<string>) => {
+const skillsList = (title: string, skills: Array<string>, colorScheme: string) => {
   return (
     <Box>
       <Heading fontSize="xl" mt={5} mb={3}>
@@ -35,7 +35,7 @@ const skillsList = (title: string, skills: Array<string>) => {
       </Heading>
       <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start">
         {skills.map(feature => (
-          <Button key={feature} colorScheme="gray" size="sm" mr={2} mb={2}>
+          <Button key={feature} colorScheme={colorScheme} variant="outline" size="sm" mr={2} mb={2}>
             {feature}
           </Button>
         ))}
@@ -47,9 +47,15 @@ const skillsList = (title: string, skills: Array<string>) => {
 const totalExperience = differenceDates('2020-01-01')
 export default function Skills() {
   return (
-    <Box boxShadow="xl" p={{ base: '1', lg: '6' }} rounded="md" paddingX={10}>
-      <Container maxW="4xl" textAlign="center">
-        <Heading fontSize="3xl" marginY={{ base: '5', lg: '10' }}>
+    <Box
+      shadow="base"
+      p={{ base: '1', lg: '6' }}
+      rounded="xl"
+      paddingX={10}
+      background={useColorModeValue('gray.50', 'gray.900')}
+    >
+      <Container textAlign="center" maxWidth="100%" padding={0}>
+        <Heading fontSize="2xl" marginY={{ base: '5', lg: '10' }}>
           Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
           d&apos;expérience en développement Full Stack
         </Heading>
@@ -66,20 +72,24 @@ export default function Skills() {
           borderColor={{ base: 'none', lg: 'gray.500' }}
           justifyContent="space-between"
         >
-          <Text color="gray.500" fontSize="xl">
-            Je suis un développeur Fullstack spécialisé dans la création d&apos;applications
-            modernes et performantes. Basé à Montpellier, je travaille avec des startups et des
-            entreprises en croissance pour les aider à atteindre leurs objectifs business.
+          <Text fontSize="xl">
+            Je suis un développeur <b>Fullstack</b> spécialisé dans la création d&apos;applications
+            <b> modernes et performantes</b>. Basé à Montpellier, je travaille avec des startups et
+            des entreprises en croissance pour les aider à atteindre leurs objectifs business.
             <br />
             <br /> Mes atouts résident dans ma connaissance approfondie de l&apos;écosystème
-            JavaScript avec React, Node.js et Next.js.
+            <b> JavaScript avec React, Node.js et Next.js</b>.
           </Text>
         </Flex>
         <Flex flex={0.5} pl={{ base: '0', lg: '10' }} pb={5} wrap="wrap" direction="column">
-          {skillsList('Front-End', frontTechnologies)}
-          {skillsList('Back-End', backTechnologies)}
-          {skillsList('Gestion de projet', projectManagement)}
-          {skillsList('Low Code', lowCode)}
+          {skillsList('Front-End', frontTechnologies, 'pink')}
+          {skillsList('Back-End', backTechnologies, 'purple')}
+          {skillsList(
+            'Gestion de projet',
+            projectManagement,
+            useColorModeValue('blackAlpha', 'gray')
+          )}
+          {skillsList('Low Code', lowCode, useColorModeValue('blackAlpha', 'gray'))}
         </Flex>
       </Flex>
     </Box>

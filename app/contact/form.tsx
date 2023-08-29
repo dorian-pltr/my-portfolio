@@ -48,6 +48,7 @@ export default function ContactFormWithSocialButtons() {
                     variant="ghost"
                     size="lg"
                     fontSize="3xl"
+                    shadow="md"
                     icon={<MdEmail />}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
@@ -64,6 +65,7 @@ export default function ContactFormWithSocialButtons() {
                     variant="ghost"
                     size="lg"
                     fontSize="3xl"
+                    shadow="md"
                     icon={<FaGithub />}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
@@ -78,6 +80,7 @@ export default function ContactFormWithSocialButtons() {
                     aria-label="linkedin"
                     variant="ghost"
                     size="lg"
+                    shadow="md"
                     icon={<FaLinkedinIn size="28px" />}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
@@ -89,7 +92,7 @@ export default function ContactFormWithSocialButtons() {
               </Stack>
 
               <Box
-                bg={useColorModeValue('white', 'gray.700')}
+                background={useColorModeValue('gray.50', 'gray.900')}
                 borderRadius="lg"
                 p={8}
                 color={useColorModeValue('gray.700', 'whiteAlpha.900')}

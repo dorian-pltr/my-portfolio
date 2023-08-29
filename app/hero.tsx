@@ -1,5 +1,15 @@
-import { Button, Center, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import {
+  Button,
+  Center,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import NextLink from 'next/link'
+import './globals.css'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
   return (
@@ -19,7 +29,7 @@ const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: num
 export default function Hero() {
   return (
     <>
-      <Stack direction={{ base: 'column', md: 'row' }} pb={10}>
+      <Stack direction={{ base: 'column', md: 'row' }} pb={5} gap={10}>
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
             <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
@@ -35,6 +45,7 @@ export default function Hero() {
               <Center>
                 <Image
                   mt={50}
+                  shadow="xl"
                   alt="Mon portrait"
                   borderRadius="full"
                   maxHeight="200"
@@ -55,45 +66,47 @@ export default function Hero() {
                 direction="row"
                 flexWrap="wrap"
               >
-                <Button colorScheme="purple" size="sm" mr={2}>
+                <Button colorScheme="purple" size="sm" mr={2} variant="outline">
                   React
                 </Button>
-                <Button colorScheme="purple" size="sm" mr={2}>
+                <Button colorScheme="purple" size="sm" mr={2} variant="outline">
                   Node.js
                 </Button>
-                <Button colorScheme="purple" size="sm" mr={2}>
+                <Button colorScheme="purple" size="sm" mr={2} variant="outline">
                   Next.js
-                </Button>
-                <Button colorScheme="purple" size="sm" mr={2}>
-                  Airtable
-                </Button>
-                <Button colorScheme="purple" size="sm">
-                  Power Automate
                 </Button>
               </Stack>
             </Heading>
-            <Text fontSize="xl" color="gray.500" align={{ base: 'center', md: 'left' }}>
-              Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je vous
-              encourage vivement à me contacter afin que nous puissions discuter de vos besoins et
-              trouver la meilleure façon de collaborer 😊
-            </Text>
+            <Flex
+              flexDirection="row"
+              flexWrap="wrap"
+              background={useColorModeValue('gray.50', 'gray.900')}
+              p={5}
+              rounded="xl"
+            >
+              <Text mr="2" fontSize="xl" color={useColorModeValue('pink.500', 'pink.200')}>
+                dorian@my-portfolio
+              </Text>
+              <Text mr="2" fontSize="xl" color={useColorModeValue('purple.500', 'purple.200')}>
+                ~ $
+              </Text>
+              <Text fontSize="xl" color="gray.500">
+                Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
+                vous encourage vivement à me contacter afin que nous puissions discuter de vos
+                besoins et trouver la meilleure façon de collaborer
+                <span className="blink-caret">▐</span>
+              </Text>
+            </Flex>
+
             <Stack
               direction={{ base: 'column', md: 'row' }}
+              width="100%"
               spacing={4}
               mt={{ base: '5', md: '0' }}
               mb={{ base: '5', md: '0' }}
             >
-              <Button as={NextLink} rounded="full" colorScheme="pink" href="/contact">
+              <Button as={NextLink} rounded="xl" colorScheme="purple" href="/contact" width="100%">
                 Me contacter
-              </Button>
-              <Button
-                as={NextLink}
-                rounded="full"
-                colorScheme="purple"
-                variant="outline"
-                href="/about"
-              >
-                À propos
               </Button>
             </Stack>
           </Stack>
@@ -103,7 +116,7 @@ export default function Hero() {
             <Image
               alt="Mon portrait"
               borderRadius="full"
-              boxShadow="xl"
+              shadow="xl"
               maxHeight="300"
               src="images/color_portrait.png"
               minWidth="auto"
@@ -114,15 +127,7 @@ export default function Hero() {
           </Center>
         </Flex>
       </Stack>
-      <Flex
-        pr={{ base: '10', md: '20' }}
-        pl={{ base: '10', md: '20' }}
-        direction="row"
-        flexWrap="wrap"
-        align="center"
-        justify="space-evenly"
-        gap={10}
-      >
+      <Flex direction="row" flexWrap="wrap" align="center" justify="space-evenly" gap={10}>
         {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 30)}
         {companyLogo('images/fi.png', 'Force Interactive', 'https://www.forceinteractive.fr/', 35)}
         {companyLogo(
