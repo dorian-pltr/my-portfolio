@@ -7,6 +7,6 @@
         opacity: 1;
     }
 }
-.blink-caret {
-  animation: blinking 1s infinite !important;
+.blinking {
+  animation: blinking 1s infinite;
 }

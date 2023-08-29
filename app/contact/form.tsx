@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MdEmail, MdOutlineEmail, MdPerson } from 'react-icons/md'
+import { TfiEmail } from 'react-icons/tfi'
 
 export default function ContactFormWithSocialButtons() {
   const { hasCopied, onCopy } = useClipboard('pelletierdorian@gmail.com')
@@ -135,6 +136,7 @@ export default function ContactFormWithSocialButtons() {
 
                   <Button
                     colorScheme="pink"
+                    leftIcon={<TfiEmail />}
                     width="full"
                     shadow="md"
                     isDisabled

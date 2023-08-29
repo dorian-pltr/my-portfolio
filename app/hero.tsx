@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import './globals.css'
+import { TfiEmail } from 'react-icons/tfi'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
   return (
@@ -95,7 +96,7 @@ export default function Hero() {
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
                 besoins et trouver la meilleure façon de collaborer
-                <span className="blink-caret">▐</span>
+                <span className="blinking">▐</span>
               </Text>
             </Flex>
 
@@ -113,6 +114,7 @@ export default function Hero() {
                 href="/contact"
                 width="100%"
                 shadow="md"
+                leftIcon={<TfiEmail />}
               >
                 Me contacter
               </Button>

@@ -25,7 +25,7 @@ export default function NavbarDrawer() {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+      <Button ref={btnRef} variant="ghost" colorScheme="gray" onClick={onOpen}>
         <HamburgerIcon />
       </Button>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
