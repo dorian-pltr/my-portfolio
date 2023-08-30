@@ -9,7 +9,7 @@ export default function Page() {
     <div>
       <Stack p={{ base: '10', md: '20' }}>
         <Hero />
-        <Box pt="30">
+        <Box pt="50">
           <Skills />
         </Box>
       </Stack>

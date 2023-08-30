@@ -1,6 +1,8 @@
 'use client'
 
 import { Box, Button, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { TfiArrowRight } from 'react-icons/tfi'
 
 const frontTechnologies = ['React', 'Next.js', 'Redux', 'Routing', 'TypeScript', 'HTML', 'CSS']
 const backTechnologies = [
@@ -33,9 +35,15 @@ const skillsList = (title: string, skills: Array<string>, colorScheme: string) =
       <Heading fontSize="xl" mt={5} mb={3}>
         {title}
       </Heading>
-      <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start">
+      <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start" gap={2}>
         {skills.map(feature => (
-          <Button key={feature} colorScheme={colorScheme} variant="outline" size="sm" mr={2} mb={2}>
+          <Button
+            className="shaking"
+            key={feature}
+            colorScheme={colorScheme}
+            variant="outline"
+            size="sm"
+          >
             {feature}
           </Button>
         ))}
@@ -55,8 +63,12 @@ export default function Skills() {
       background={useColorModeValue('gray.50', 'gray.900')}
     >
       <Container textAlign="center" maxWidth="100%" padding={0}>
+        {' '}
         <Heading fontSize="2xl" marginY={{ base: '5', lg: '10' }}>
-          Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
+          Bénéficiez de mes{' '}
+          <u>
+            {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
+          </u>{' '}
           d&apos;expérience en développement Full Stack
         </Heading>
       </Container>
@@ -64,13 +76,15 @@ export default function Skills() {
       <Flex flexDirection={{ base: 'column', lg: 'row' }}>
         <Flex
           flex={0.5}
+          gap={10}
+          flexDirection="column"
           pr={{ base: '0', lg: '10' }}
           pb={5}
           pt={5}
           wrap="wrap"
           borderRight={{ base: 'none', lg: '1px' }}
           borderColor={{ base: 'none', lg: 'gray.500' }}
-          justifyContent="space-between"
+          justifyContent="space-evenly"
         >
           <Text fontSize="xl">
             Je suis un développeur <b>Fullstack</b> spécialisé dans la création d&apos;applications
@@ -80,8 +94,27 @@ export default function Skills() {
             <br /> Mes atouts résident dans ma connaissance approfondie de l&apos;écosystème
             <b> JavaScript avec React, Node.js et Next.js</b>.
           </Text>
+
+          <Button
+            as={NextLink}
+            rounded="xl"
+            colorScheme="pink"
+            href="/skills"
+            width="100%"
+            shadow="md"
+            leftIcon={<TfiArrowRight />}
+          >
+            Mes compétences
+          </Button>
         </Flex>
-        <Flex flex={0.5} pl={{ base: '0', lg: '10' }} pb={5} wrap="wrap" direction="column">
+        <Flex
+          flex={0.5}
+          pl={{ base: '0', lg: '10' }}
+          pb={5}
+          wrap="wrap"
+          gap={2}
+          flexDirection="column"
+        >
           {skillsList('Front-End', frontTechnologies, 'pink')}
           {skillsList('Back-End', backTechnologies, 'purple')}
           {skillsList(
