@@ -51,6 +51,7 @@ export default function ContactFormWithSocialButtons() {
                     fontSize="3xl"
                     shadow="md"
                     icon={<MdEmail />}
+                    bg={useColorModeValue('gray.50', 'gray.900')}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
                       color: useColorModeValue('white', 'gray.700'),
@@ -68,6 +69,7 @@ export default function ContactFormWithSocialButtons() {
                     fontSize="3xl"
                     shadow="md"
                     icon={<FaGithub />}
+                    bg={useColorModeValue('gray.50', 'gray.900')}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
                       color: useColorModeValue('white', 'gray.700'),
@@ -83,6 +85,7 @@ export default function ContactFormWithSocialButtons() {
                     size="lg"
                     shadow="md"
                     icon={<FaLinkedinIn size="28px" />}
+                    bg={useColorModeValue('gray.50', 'gray.900')}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
                       color: useColorModeValue('white', 'gray.700'),
