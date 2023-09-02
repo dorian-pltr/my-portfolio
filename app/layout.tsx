@@ -19,7 +19,7 @@ export default function Layout({ children }: DashboardLayoutProps) {
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff /" />
-        <title>Dorian PELLETIER</title>
+        <title>Dorian PELLETIER - Développeur Full Stack</title>
       </head>
       <body>
         <Providers>
