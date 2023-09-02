@@ -1,4 +1,5 @@
 import {
+  Badge,
   Button,
   Center,
   Flex,
@@ -10,7 +11,8 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import './globals.css'
-import { TfiEmail } from 'react-icons/tfi'
+import { FaBoltLightning } from 'react-icons/fa6'
+import { FaEnvelope } from 'react-icons/fa'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
   return (
@@ -30,7 +32,7 @@ const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: num
 export default function Hero() {
   return (
     <>
-      <Stack direction={{ base: 'column', md: 'row' }} pb={50} gap={10}>
+      <Stack direction={{ base: 'column', md: 'row' }} pb={{ base: 5, md: 20 }} gap={10}>
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
             <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
@@ -67,15 +69,15 @@ export default function Hero() {
                 direction="row"
                 flexWrap="wrap"
               >
-                <Button colorScheme="purple" size="sm" mr={2} className="shaking" variant="outline">
+                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
                   React
-                </Button>
-                <Button colorScheme="purple" size="sm" mr={2} className="shaking" variant="outline">
-                  Node.js
-                </Button>
-                <Button colorScheme="purple" size="sm" mr={2} className="shaking" variant="outline">
+                </Badge>
+                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
                   Next.js
-                </Button>
+                </Badge>
+                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
+                  Node.js
+                </Badge>
               </Stack>
             </Heading>
             <Flex
@@ -120,13 +122,23 @@ export default function Hero() {
               <Button
                 as={NextLink}
                 rounded="xl"
-                colorScheme="purple"
+                colorScheme="pink"
+                variant="outline"
                 href="/contact"
                 width="100%"
-                shadow="md"
-                leftIcon={<TfiEmail />}
+                leftIcon={<FaEnvelope />}
               >
                 Me contacter
+              </Button>
+              <Button
+                as={NextLink}
+                rounded="xl"
+                colorScheme="purple"
+                href="/projects"
+                width="100%"
+                leftIcon={<FaBoltLightning />}
+              >
+                Voir mes projets
               </Button>
             </Stack>
           </Stack>

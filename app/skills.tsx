@@ -1,12 +1,21 @@
 'use client'
 
-import { Box, Button, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
+import {
+  Badge,
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { TfiArrowRight } from 'react-icons/tfi'
+import { FaCog } from 'react-icons/fa'
 
 const frontTechnologies = ['React', 'Next.js', 'Redux', 'Routing', 'TypeScript', 'HTML', 'CSS']
 const backTechnologies = [
-  'NodeJS',
+  'Node.JS',
   'Express',
   'GraphQL',
   'PostgreSQL',
@@ -15,7 +24,7 @@ const backTechnologies = [
   'InfluxDB',
 ]
 const projectManagement = ['GIT', 'Agile et Scrum', 'Jira', 'Confluence', 'Trello']
-const lowCode = ['Airtable', 'Zapier', 'Power Automate']
+const lowCode = ['Airtable', 'Zapier', 'Power Automate', 'WordPress']
 
 const differenceDates = (stringStartDate: string, stringEndDate?: string | undefined) => {
   const startDate = new Date(stringStartDate)
@@ -37,15 +46,16 @@ const skillsList = (title: string, skills: Array<string>, colorScheme: string) =
       </Heading>
       <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start" gap={2}>
         {skills.map(feature => (
-          <Button
-            className="shaking"
-            key={feature}
+          <Badge
             colorScheme={colorScheme}
-            variant="outline"
+            key={feature}
+            rounded="3xl"
             size="sm"
+            p={2}
+            variant="outline"
           >
             {feature}
-          </Button>
+          </Badge>
         ))}
       </Flex>
     </Box>
@@ -64,11 +74,8 @@ export default function Skills() {
     >
       <Container textAlign="center" maxWidth="100%" padding={0}>
         {' '}
-        <Heading fontSize="2xl" marginY={{ base: '5', lg: '10' }}>
-          Bénéficiez de mes{' '}
-          <u>
-            {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
-          </u>{' '}
+        <Heading fontSize="3xl" marginY={{ base: '5', lg: '10' }}>
+          Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
           d&apos;expérience en développement Full Stack
         </Heading>
       </Container>
@@ -97,32 +104,40 @@ export default function Skills() {
 
           <Button
             as={NextLink}
+            width="min-content"
             rounded="xl"
             colorScheme="pink"
             href="/skills"
-            width="100%"
-            shadow="md"
-            leftIcon={<TfiArrowRight />}
+            leftIcon={<FaCog />}
+            display={{ base: 'none', lg: 'inherit' }}
           >
-            Mes compétences
+            Mes compétences en détail
           </Button>
         </Flex>
         <Flex
           flex={0.5}
           pl={{ base: '0', lg: '10' }}
-          pb={5}
+          marginBottom={7}
           wrap="wrap"
           gap={2}
           flexDirection="column"
+          width="100%"
         >
           {skillsList('Front-End', frontTechnologies, 'pink')}
           {skillsList('Back-End', backTechnologies, 'purple')}
-          {skillsList(
-            'Gestion de projet',
-            projectManagement,
-            useColorModeValue('blackAlpha', 'gray')
-          )}
+          {skillsList('Gestion de projet', projectManagement, 'yellow')}
           {skillsList('Low Code', lowCode, useColorModeValue('blackAlpha', 'gray'))}
+          <Button
+            mt={7}
+            as={NextLink}
+            rounded="xl"
+            colorScheme="pink"
+            href="/skills"
+            leftIcon={<FaCog />}
+            display={{ base: 'flex', lg: 'none' }}
+          >
+            Mes compétences en détail
+          </Button>
         </Flex>
       </Flex>
     </Box>

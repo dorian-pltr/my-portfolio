@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import { Button, Center, Flex, Stack, useColorModeValue } from '@chakra-ui/react'
-import Logo from '@/components/logo'
+import LogoVariant from '@/components/logoVariant'
 import ThemeToggle from './themeToggle'
 import NavbarDrawer from './navbarDrawer'
 import { DownloadIcon } from '@chakra-ui/icons'
@@ -17,7 +17,7 @@ export default function Navbar() {
       justify="space-between"
       alignItems="center"
     >
-      <Logo />
+      <LogoVariant />
       <Stack display={{ base: 'none', lg: 'inherit' }}>
         <MenuItems />
       </Stack>
