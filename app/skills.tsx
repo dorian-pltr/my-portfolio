@@ -74,7 +74,7 @@ export default function Skills() {
     >
       <Container textAlign="center" maxWidth="100%" padding={0}>
         {' '}
-        <Heading fontSize="3xl" marginY={{ base: '5', lg: '10' }}>
+        <Heading fontSize={{ base: 'xl', sm: '2xl', lg: '3xl' }} marginY={{ base: '5', lg: '10' }}>
           Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
           d&apos;expérience en développement Full Stack
         </Heading>
