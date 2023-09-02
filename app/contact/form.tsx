@@ -17,9 +17,15 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { MdEmail, MdOutlineEmail, MdPerson } from 'react-icons/md'
-import { TfiEmail } from 'react-icons/tfi'
+import {
+  FaEnvelope,
+  FaEnvelopeOpenText,
+  FaGithub,
+  FaLinkedinIn,
+  FaPaperPlane,
+  FaPhoneAlt,
+} from 'react-icons/fa'
+import { FaPerson } from 'react-icons/fa6'
 
 export default function ContactFormWithSocialButtons() {
   const { hasCopied, onCopy } = useClipboard('pelletierdorian@gmail.com')
@@ -50,7 +56,7 @@ export default function ContactFormWithSocialButtons() {
                     size="lg"
                     fontSize="3xl"
                     shadow="md"
-                    icon={<MdEmail />}
+                    icon={hasCopied ? <FaEnvelopeOpenText /> : <FaEnvelope />}
                     bg={useColorModeValue('gray.50', 'gray.900')}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
@@ -83,8 +89,9 @@ export default function ContactFormWithSocialButtons() {
                     aria-label="linkedin"
                     variant="ghost"
                     size="lg"
+                    fontSize="3xl"
                     shadow="md"
-                    icon={<FaLinkedinIn size="28px" />}
+                    icon={<FaLinkedinIn />}
                     bg={useColorModeValue('gray.50', 'gray.900')}
                     _hover={{
                       bg: useColorModeValue('pink.500', 'pink.200'),
@@ -108,7 +115,7 @@ export default function ContactFormWithSocialButtons() {
 
                     <InputGroup>
                       <InputLeftElement>
-                        <MdPerson />
+                        <FaPerson />
                       </InputLeftElement>
                       <Input isDisabled type="text" name="name" placeholder="Votre nom" />
                     </InputGroup>
@@ -116,12 +123,21 @@ export default function ContactFormWithSocialButtons() {
 
                   <FormControl isRequired>
                     <FormLabel>Email</FormLabel>
-
                     <InputGroup>
                       <InputLeftElement>
-                        <MdOutlineEmail />
+                        <FaEnvelope />
                       </InputLeftElement>
                       <Input isDisabled type="email" name="email" placeholder="Votre email" />
+                    </InputGroup>
+                  </FormControl>
+
+                  <FormControl>
+                    <FormLabel>Téléphone</FormLabel>
+                    <InputGroup>
+                      <InputLeftElement>
+                        <FaPhoneAlt />
+                      </InputLeftElement>
+                      <Input isDisabled type="tel" name="tel" placeholder="Votre téléphone" />
                     </InputGroup>
                   </FormControl>
 
@@ -139,7 +155,7 @@ export default function ContactFormWithSocialButtons() {
 
                   <Button
                     colorScheme="pink"
-                    leftIcon={<TfiEmail />}
+                    leftIcon={<FaPaperPlane />}
                     width="full"
                     shadow="md"
                     isDisabled
