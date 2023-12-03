@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { DownloadIcon, HamburgerIcon } from '@chakra-ui/icons'
 import React from 'react'
-import MenuItems from '@/components/menuItems'
+import MenuItems from '@/src/components/menuItems'
 import NextLink from 'next/link'
 
 export default function NavbarDrawer() {

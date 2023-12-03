@@ -1,0 +1,26 @@
+query GetProjects {
+  project(where: { id: { not: 1 } }) {
+    id
+    name
+    description
+    startDate
+    endDate
+    status {
+      id
+      name
+    }
+    technologies {
+      id
+      name
+      type {
+        id
+        name
+      }
+    }
+    images(where: { isMain: true }) {
+      id
+      url
+      isMain
+    }
+  }
+}

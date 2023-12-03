@@ -6,13 +6,11 @@ import './globals.css'
 
 export default function Page() {
   return (
-    <div>
-      <Stack p={{ base: '10', md: '20' }}>
-        <Hero />
-        <Box pt="50">
-          <Skills />
-        </Box>
-      </Stack>
-    </div>
+    <Stack p={{ base: '10', md: '20' }}>
+      <Hero />
+      <Box pt="50">
+        <Skills />
+      </Box>
+    </Stack>
   )
 }

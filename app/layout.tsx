@@ -1,9 +1,16 @@
 'use client'
 
 import React from 'react'
-import Navbar from '@/components/navbar'
+import Navbar from '@/src/components/navbar'
 import { Providers } from './providers'
-import Footer from '@/components/footer'
+import Footer from '@/src/components/footer'
+
+import { createClient, Provider, fetchExchange } from 'urql'
+
+const client = createClient({
+  url: process.env.API_URL ?? 'http://localhost:4000/graphql',
+  exchanges: [fetchExchange],
+})
 
 type DashboardLayoutProps = {
   children: React.ReactNode
@@ -22,15 +29,17 @@ export default function Layout({ children }: DashboardLayoutProps) {
         <title>Dorian PELLETIER - Développeur Full Stack</title>
       </head>
       <body>
-        <Providers>
-          <nav>
-            <Navbar />
-          </nav>
-          {children}
-          <footer>
-            <Footer />
-          </footer>
-        </Providers>
+        <Provider value={client}>
+          <Providers>
+            <nav>
+              <Navbar />
+            </nav>
+            {children}
+            <footer>
+              <Footer />
+            </footer>
+          </Providers>
+        </Provider>
       </body>
     </html>
   )

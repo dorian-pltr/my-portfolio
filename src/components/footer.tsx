@@ -2,7 +2,7 @@ import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import Logo from './logo'
 import SocialButton from './socialButton'
-import MenuItems from '@/components/menuItems'
+import MenuItems from '@/src/components/menuItems'
 
 export default function Footer() {
   const year = new Date().getFullYear()

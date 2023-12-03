@@ -1,8 +1,16 @@
 'use client'
 
+import { GetProjectsDocument } from '@/src/graphql/generated'
 import { Heading, Stack, Text } from '@chakra-ui/react'
+import { useQuery } from 'urql'
 
 export default function Page() {
+  const [results] = useQuery({
+    query: GetProjectsDocument,
+  })
+
+  const projects = results.data?.project || []
+
   return (
     <Stack p={{ base: '10', md: '20' }}>
       <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
@@ -12,7 +20,7 @@ export default function Page() {
           bgClip="text"
           fontWeight="extrabold"
         >
-          Compétences
+          Détails du projet
         </Text>
       </Heading>
       <Text alignSelf="center">En cours de développement...</Text>
