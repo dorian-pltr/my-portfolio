@@ -1,14 +1,14 @@
 'use client'
 
-import React from 'react'
-import Navbar from '@/src/components/navbar'
-import { Providers } from './providers'
 import Footer from '@/src/components/footer'
+import Navbar from '@/src/components/navbar'
+import React from 'react'
+import { Providers } from './providers'
 
-import { createClient, Provider, fetchExchange } from 'urql'
+import { Provider, createClient, fetchExchange } from 'urql'
 
 const client = createClient({
-  url: process.env.API_URL ?? 'http://localhost:4000/graphql',
+  url: process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000/graphql',
   exchanges: [fetchExchange],
 })
 
