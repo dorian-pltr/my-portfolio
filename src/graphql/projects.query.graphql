@@ -1,5 +1,5 @@
 query GetProjects {
-  project(where: { id: { not: 1 } }) {
+  project {
     id
     name
     description
@@ -12,12 +12,13 @@ query GetProjects {
     technologies {
       id
       name
+      isMain
       type {
         id
         name
       }
     }
-    images(where: { isMain: true }) {
+    images {
       id
       url
       isMain

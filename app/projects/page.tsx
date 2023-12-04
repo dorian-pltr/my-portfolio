@@ -2,6 +2,7 @@
 
 import ProjectCard from '@/src/components/projectCard'
 import { GetProjectsDocument } from '@/src/graphql/generated'
+import { Projects } from '@/src/types'
 import { Flex, Heading, Stack, Text } from '@chakra-ui/react'
 import { useQuery } from 'urql'
 
@@ -10,7 +11,7 @@ export default function Page() {
     query: GetProjectsDocument,
   })
 
-  const projects = results.data?.project || []
+  const projects = (results.data?.project as Projects) ?? []
 
   return (
     <Stack p={{ base: '10', md: '20' }}>
@@ -25,8 +26,18 @@ export default function Page() {
         </Text>
       </Heading>
       <Flex gap={10} justifyContent="center" wrap="wrap">
-        {projects &&
-          projects.map(project => <ProjectCard project={project} key={project.projectID} />)}
+        {projects?.map(project => (
+          <ProjectCard
+            name={project.name}
+            id={project.id}
+            status={project.status}
+            technologies={project.technologies}
+            images={project.images}
+            key={project.id}
+            description={project.description}
+            startDate={undefined}
+          />
+        ))}
       </Flex>
     </Stack>
   )

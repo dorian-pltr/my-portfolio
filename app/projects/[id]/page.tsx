@@ -1,15 +1,13 @@
 'use client'
 
-import { GetProjectsDocument } from '@/src/graphql/generated'
 import { Heading, Stack, Text } from '@chakra-ui/react'
-import { useQuery } from 'urql'
 
 export default function Page() {
-  const [results] = useQuery({
-    query: GetProjectsDocument,
-  })
+  //   const [results] = useQuery({
+  //     query: GetProjectsDocument,
+  //   })
 
-  const projects = results.data?.project || []
+  //   const projects = results.data?.project || []
 
   return (
     <Stack p={{ base: '10', md: '20' }}>

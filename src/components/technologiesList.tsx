@@ -1,6 +1,5 @@
+import { Technology } from '@/src/types'
 import { Badge } from '@chakra-ui/react'
-import { Technology } from '../graphql/generated'
-
 export default function technologiesList(technologies: Array<Technology>) {
   const technologyColor: { [key: string]: string } = {
     'Front-End': 'pink',

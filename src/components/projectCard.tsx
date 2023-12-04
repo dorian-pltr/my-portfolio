@@ -2,12 +2,12 @@
 
 import { Box, Center, Flex, Heading, Image, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
-import { Project } from '../graphql/generated'
+import { Project } from '../types'
 import technologiesList from './technologiesList'
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ name, id, status, technologies, images }: Readonly<Project>) {
   return (
-    <Link href={`/projects/${project.id}`} passHref>
+    <Link href={`/projects/${id}`} passHref>
       <Center py={12}>
         <Box
           p={6}
@@ -21,25 +21,27 @@ export default function ProjectCard({ project }: { project: Project }) {
           _hover={{ transform: 'scale(1.1)', shadow: 'lg' }}
           transition="1s"
         >
-          <Link href={`/projects/${project.id}`} passHref></Link>
+          <Link href={`/projects/${id}`} passHref></Link>
           <Box rounded="lg" mt={-12} pos="relative" height="230px">
-            <Image
-              rounded="lg"
-              height={230}
-              width={282}
-              objectFit="cover"
-              src={project.images[0].url}
-              alt={project.name}
-              shadow="2xl"
-            />
+            {images && (
+              <Image
+                rounded="lg"
+                height={230}
+                width={282}
+                objectFit="cover"
+                src={images[0].url}
+                alt={name}
+                shadow="2xl"
+              />
+            )}
           </Box>
           <Stack pt={5} gap={5} align="center">
             <Heading fontSize="2xl" fontFamily="body" fontWeight={800}>
-              {project.name}
+              {name}
             </Heading>
-            <Text fontSize="xl">{project.status.name}</Text>
+            <Text fontSize="xl">{status?.name}</Text>
             <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
-              {technologiesList(project.technologies)}
+              {technologies && technologiesList(technologies)}
             </Flex>
           </Stack>
         </Box>
