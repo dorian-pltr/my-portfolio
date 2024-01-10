@@ -1,6 +1,6 @@
 import { Button, Flex, ResponsiveValue } from '@chakra-ui/react'
-import NextLink from 'next/link'
 import { Property } from 'csstype'
+import NextLink from 'next/link'
 
 type FlexDirection = Property.FlexDirection
 type FlexWrap = Property.FlexWrap
@@ -11,6 +11,7 @@ interface MenuButtonProps {
   href: string
   children: React.ReactNode
   onItemClick?: OnItemClickFunction
+  marginRight?: number
 }
 
 interface MenuItemsProps {
@@ -20,11 +21,11 @@ interface MenuItemsProps {
   onItemClick?: OnItemClickFunction
 }
 
-const MenuButton = ({ href, children, onItemClick }: MenuButtonProps) => (
+const MenuButton = ({ href, children, onItemClick, marginRight }: MenuButtonProps) => (
   <Button
     as={NextLink}
     href={href}
-    mr={4}
+    mr={marginRight}
     variant="ghost"
     justifyContent="flex-start"
     onClick={onItemClick}
@@ -41,19 +42,13 @@ export default function MenuItems({
 }: MenuItemsProps) {
   return (
     <Flex flexDirection={flexDirection} flexWrap={flexWrap} justifyContent={justifyContent}>
-      <MenuButton href="/" onItemClick={onItemClick}>
+      <MenuButton href="/" onItemClick={onItemClick} marginRight={4}>
         Accueil
       </MenuButton>
-      <MenuButton href="/about" onItemClick={onItemClick}>
-        À propos
-      </MenuButton>
-      <MenuButton href="/skills" onItemClick={onItemClick}>
-        Compétences
-      </MenuButton>
-      <MenuButton href="/projects" onItemClick={onItemClick}>
+      <MenuButton href="/projects" onItemClick={onItemClick} marginRight={4}>
         Projets
       </MenuButton>
-      <MenuButton href="/contact" onItemClick={onItemClick}>
+      <MenuButton href="/contact" onItemClick={onItemClick} marginRight={0}>
         Me contacter
       </MenuButton>
     </Flex>

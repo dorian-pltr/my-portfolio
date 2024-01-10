@@ -1,8 +1,8 @@
+import MenuItems from '@/src/components/menuItems'
 import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { FaCalendar, FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import Logo from './logo'
 import SocialButton from './socialButton'
-import MenuItems from '@/src/components/menuItems'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -33,10 +33,13 @@ export default function Footer() {
         >
           <Text>© {year} Dorian PELLETIER | Tous droits réservés</Text>
           <Stack direction="row" spacing={6}>
-            <SocialButton label="LinkedIn" href="https://www.linkedin.com/in/dorian-pltr/">
+            <SocialButton label="Calendly" href={process.env.NEXT_CALENDLY_URL ?? ''}>
+              <FaCalendar />
+            </SocialButton>
+            <SocialButton label="LinkedIn" href={process.env.NEXT_LINKEDIN_URL ?? ''}>
               <FaLinkedinIn />
             </SocialButton>
-            <SocialButton label="Github" href="https://github.com/dorian-pltr">
+            <SocialButton label="Github" href={process.env.NEXT_GITHUB_URL ?? ''}>
               <FaGithub />
             </SocialButton>
           </Stack>

@@ -16,16 +16,21 @@ export default function Navbar() {
       justify="space-between"
       alignItems="center"
     >
-      <LogoVariant />
+      <Stack mr={{ base: '5', lg: '150' }}>
+        <LogoVariant />
+      </Stack>
+
       <Stack display={{ base: 'none', lg: 'inherit' }}>
         <MenuItems />
       </Stack>
+
       <Center>
         <Button
           as={NextLink}
-          href="/docs/Dorian_PELLETIER_CV.pdf"
+          href={process.env.NEXT_CV_URL ?? ''}
+          target="_blank"
           colorScheme="pink"
-          mr="4"
+          mr={4}
           ml={4}
           leftIcon={<DownloadIcon />}
           variant="solid"
@@ -33,7 +38,7 @@ export default function Navbar() {
           CV
         </Button>
         <ThemeToggle />
-        <Stack ml="4" display={{ base: 'inherit', lg: 'none' }}>
+        <Stack ml={4} display={{ base: 'inherit', lg: 'none' }}>
           <NavbarDrawer />
         </Stack>
       </Center>

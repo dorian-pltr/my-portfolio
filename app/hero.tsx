@@ -10,9 +10,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { FaCalendar, FaEnvelope } from 'react-icons/fa'
 import './globals.css'
-import { FaBoltLightning } from 'react-icons/fa6'
-import { FaEnvelope } from 'react-icons/fa'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
   return (
@@ -134,11 +133,12 @@ export default function Hero() {
                 as={NextLink}
                 rounded="xl"
                 colorScheme="purple"
-                href="/projects"
+                href={process.env.NEXT_CALENDLY_URL ?? ''}
+                target="_blank"
                 width="100%"
-                leftIcon={<FaBoltLightning />}
+                leftIcon={<FaCalendar />}
               >
-                Voir mes projets
+                Prendre RDV
               </Button>
             </Stack>
           </Stack>

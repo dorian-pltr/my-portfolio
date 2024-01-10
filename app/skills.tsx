@@ -1,17 +1,6 @@
 'use client'
 
-import {
-  Badge,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import NextLink from 'next/link'
-import { FaCog } from 'react-icons/fa'
+import { Badge, Box, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
 
 const frontTechnologies = ['React', 'Next.js', 'Redux', 'Routing', 'TypeScript', 'HTML', 'CSS']
 const backTechnologies = [
@@ -75,8 +64,8 @@ export default function Skills() {
       <Container textAlign="center" maxWidth="100%" padding={0}>
         {' '}
         <Heading fontSize={{ base: 'xl', sm: '2xl', lg: '3xl' }} marginY={{ base: '5', lg: '10' }}>
-          Bénéficiez de mes {totalExperience.yearDiff} ans et {totalExperience.monthDiff} mois
-          d&apos;expérience en développement Full Stack
+          Bénéficiez de mes {totalExperience.yearDiff} ans d&apos;expérience en développement Full
+          Stack
         </Heading>
       </Container>
 
@@ -94,25 +83,28 @@ export default function Skills() {
           justifyContent="space-evenly"
         >
           <Text fontSize="xl">
-            Je suis un développeur <b>Fullstack</b> spécialisé dans la création d&apos;applications
-            <b> modernes et performantes</b>. Basé à Montpellier, je travaille avec des startups et
-            des entreprises en croissance pour les aider à atteindre leurs objectifs business.
+            Je suis un <b>développeur Fullstack</b> spécialisé dans la création d&apos;applications
+            modernes et performantes. Fort de mon expérience, je collabore étroitement avec des{' '}
+            <b>startups, petites, moyennes et grandes entreprises</b> pour les accompagner dans
+            l&apos;atteinte de leurs objectifs.
             <br />
-            <br /> Mes atouts résident dans ma connaissance approfondie de l&apos;écosystème
-            <b> JavaScript avec React, Node.js et Next.js</b>.
+            <br />
+            Mon expertise s&apos;étend particulièrement dans l&apos;écosystème <b>JavaScript</b>, où
+            j&apos;utilise des technologies telles que <b>React, Node.js et Next.js.</b>
+            <br />
+            <br />
+            Que ce soit en tant que collaborateur en <b>CDI ou en freelance</b>, je m&apos;engage à
+            fournir des solutions techniques de haute qualité tout en respectant vos délais.
+            <br />
+            <br />
+            Mes valeurs résident dans la{' '}
+            <b>
+              bienveillance, l&apos;entraide, la curiosité et la volonté constante de relever des
+              défis techniques.
+            </b>{' '}
+            Je suis passionné par l&apos;apprentissage continu et la montée en compétences, ce qui
+            me permet de rester à la pointe des dernières avancées technologiques !
           </Text>
-
-          <Button
-            as={NextLink}
-            width="min-content"
-            rounded="xl"
-            colorScheme="pink"
-            href="/skills"
-            leftIcon={<FaCog />}
-            display={{ base: 'none', lg: 'inherit' }}
-          >
-            Mes compétences en détail
-          </Button>
         </Flex>
         <Flex
           flex={0.5}
@@ -121,23 +113,13 @@ export default function Skills() {
           wrap="wrap"
           gap={2}
           flexDirection="column"
+          justify="center"
           width="100%"
         >
           {skillsList('Front-End', frontTechnologies, 'pink')}
           {skillsList('Back-End', backTechnologies, 'purple')}
           {skillsList('Gestion de projet', projectManagement, 'yellow')}
           {skillsList('Low Code', lowCode, useColorModeValue('blackAlpha', 'gray'))}
-          <Button
-            mt={7}
-            as={NextLink}
-            rounded="xl"
-            colorScheme="pink"
-            href="/skills"
-            leftIcon={<FaCog />}
-            display={{ base: 'flex', lg: 'none' }}
-          >
-            Mes compétences en détail
-          </Button>
         </Flex>
       </Flex>
     </Box>

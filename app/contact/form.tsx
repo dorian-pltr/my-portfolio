@@ -18,6 +18,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import {
+  FaCalendar,
   FaEnvelope,
   FaEnvelopeOpenText,
   FaGithub,
@@ -67,7 +68,24 @@ export default function ContactFormWithSocialButtons() {
                   />
                 </Tooltip>
 
-                <Box as="a" href="https://github.com/dorian-pltr" target="_blank">
+                <Box as="a" href={process.env.NEXT_CALENDLY_URL ?? ''} target="_blank">
+                  <IconButton
+                    aria-label="calendly"
+                    variant="ghost"
+                    size="lg"
+                    fontSize="3xl"
+                    shadow="md"
+                    icon={<FaCalendar />}
+                    bg={useColorModeValue('gray.50', 'gray.900')}
+                    _hover={{
+                      bg: useColorModeValue('pink.500', 'pink.200'),
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    isRound
+                  />
+                </Box>
+
+                <Box as="a" href={process.env.NEXT_GITHUB_URL ?? ''} target="_blank">
                   <IconButton
                     aria-label="github"
                     variant="ghost"
@@ -84,7 +102,7 @@ export default function ContactFormWithSocialButtons() {
                   />
                 </Box>
 
-                <Box as="a" href="https://www.linkedin.com/in/dorian-pltr/" target="_blank">
+                <Box as="a" href={process.env.NEXT_LINKEDIN_URL ?? ''} target="_blank">
                   <IconButton
                     aria-label="linkedin"
                     variant="ghost"
