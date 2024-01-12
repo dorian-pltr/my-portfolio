@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react'
 import { Project } from '../types'
 import technologiesList from './technologiesList'
 
-export default function ProjectCard({ name, id, status, technologies, images }: Readonly<Project>) {
+export default function ProjectCard({ name, status, technologies, images }: Readonly<Project>) {
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function ProjectCard({ name, id, status, technologies, images }: 
 
         // Check if the component is still mounted before initializing
         if (cardRef.current) {
+          // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
           const card = new Card3d(cardRef.current, {
             glare: true,
             glareOpacity: 0.1,
