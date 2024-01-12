@@ -56,16 +56,25 @@ export default function Skills() {
   return (
     <Box
       shadow="base"
-      p={{ base: '1', lg: '6' }}
+      py={10}
       rounded="xl"
       paddingX={5}
       background={useColorModeValue('gray.50', 'gray.900')}
     >
-      <Container textAlign="center" maxWidth="100%" padding={0}>
-        {' '}
-        <Heading fontSize={{ base: 'xl', sm: '2xl', lg: '3xl' }} marginY={{ base: '5', lg: '10' }}>
-          Bénéficiez de mes {totalExperience.yearDiff} ans d&apos;expérience en développement Full
-          Stack
+      <Container textAlign="center" maxWidth="100%">
+        <Heading
+          fontSize={{ base: '3xl', lg: '4xl' }}
+          paddingX={{ base: 'inherit', md: '100px', xl: '200px' }}
+          pb={10}
+        >
+          <Text
+            align="center"
+            color={useColorModeValue('purple.600', 'purple.200')}
+            fontWeight="extrabold"
+          >
+            Bénéficiez de mes {totalExperience.yearDiff} ans d&apos;expérience en développement Full
+            Stack
+          </Text>
         </Heading>
       </Container>
 
@@ -76,19 +85,12 @@ export default function Skills() {
           flexDirection="column"
           pr={{ base: '0', lg: '10' }}
           pb={5}
-          pt={5}
           wrap="wrap"
           borderRight={{ base: 'none', lg: '1px' }}
           borderColor={{ base: 'none', lg: 'gray.500' }}
           justifyContent="space-evenly"
         >
-          <Text fontSize="xl" textAlign="justify" justifyContent="inter-word">
-            Je suis un <b>développeur Fullstack</b> spécialisé dans la création d&apos;applications
-            modernes et performantes. Fort de mon expérience, je collabore étroitement avec des{' '}
-            <b>startups, petites, moyennes et grandes entreprises</b> pour les accompagner dans
-            l&apos;atteinte de leurs objectifs.
-            <br />
-            <br />
+          <Text fontSize="xl" textAlign="justify">
             Mon expertise s&apos;étend particulièrement dans l&apos;écosystème <b>JavaScript</b>, où
             j&apos;utilise des technologies telles que <b>React, Node.js et Next.js.</b>
             <br />

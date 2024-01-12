@@ -11,6 +11,8 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { FaCalendar, FaEnvelope } from 'react-icons/fa'
+import Slider from 'react-infinite-logo-slider'
+import { Link } from 'react-scroll/modules'
 import './globals.css'
 
 const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
@@ -118,30 +120,31 @@ export default function Hero() {
             </Flex>
 
             <Stack
-              direction={{ base: 'column', md: 'row' }}
+              direction="row"
               width="100%"
               spacing={4}
+              justify={{ base: 'center', lg: 'inherit' }}
               mt={{ base: '5', md: '0' }}
               mb={{ base: '5', md: '0' }}
             >
-              <Button
-                as={NextLink}
-                rounded="xl"
-                colorScheme="pink"
-                variant="outline"
-                href="/contact"
-                width="100%"
-                leftIcon={<FaEnvelope />}
-              >
-                Me contacter
-              </Button>
+              <Link to="contact" spy={true} smooth={true} duration={500}>
+                <Button
+                  rounded="xl"
+                  colorScheme="pink"
+                  variant="outline"
+                  width="100%"
+                  leftIcon={<FaEnvelope />}
+                >
+                  Me contacter
+                </Button>
+              </Link>
+
               <Button
                 as={NextLink}
                 rounded="xl"
                 colorScheme="purple"
                 href={process.env.NEXT_CALENDLY_URL ?? ''}
                 target="_blank"
-                width="100%"
                 leftIcon={<FaCalendar />}
               >
                 Prendre RDV
@@ -165,22 +168,35 @@ export default function Hero() {
           </Center>
         </Flex>
       </Stack>
-      <Flex direction="row" flexWrap="wrap" align="center" justify="space-evenly" gap={10}>
-        {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 30)}
-        {companyLogo('images/fi.png', 'Force Interactive', 'https://www.forceinteractive.fr/', 35)}
-        {companyLogo(
-          'images/fabop.png',
-          'La Fabrique Opéra Val de Loire',
-          'https://www.lafabriqueopera-valdeloire.com/',
-          70
-        )}
-        {companyLogo(
-          'images/uimm.png',
-          'UIMM Centre – Val de Loire',
-          'https://www.uimm-regioncentre.com/',
-          75
-        )}
-      </Flex>
+      <Stack py="1rem">
+        <Slider
+          width="300px"
+          duration={40}
+          pauseOnHover={true}
+          blurBorders={true}
+          blurBoderColor={useColorModeValue('white', '#1A202C')}
+        >
+          <Slider.Slide>
+            {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 30)}
+          </Slider.Slide>
+          <Slider.Slide>
+            {companyLogo(
+              'images/fi.png',
+              'Force Interactive',
+              'https://www.forceinteractive.fr/',
+              35
+            )}
+          </Slider.Slide>
+          <Slider.Slide>
+            {companyLogo(
+              'images/fabop.png',
+              'La Fabrique Opéra Val de Loire',
+              'https://www.lafabriqueopera-valdeloire.com/',
+              70
+            )}
+          </Slider.Slide>
+        </Slider>
+      </Stack>
     </>
   )
 }

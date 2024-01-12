@@ -1,5 +1,6 @@
 'use client'
 import { Box, Stack } from '@chakra-ui/react'
+import ContactForm from './contactForm'
 import './globals.css'
 import Hero from './hero'
 import ProjectsList from './projectsList'
@@ -9,17 +10,25 @@ export default function Page() {
   return (
     <Stack p={{ base: '5', md: '10' }}>
       <section id="home">
-        <Hero />
+        <Box pb="50">
+          <Hero />
+        </Box>
       </section>
       <section id="about">
-        <Box pt="50">
+        <Box pb="5rem">
           <Skills />
         </Box>
       </section>
       <section id="portfolio">
-        <ProjectsList />
+        <Box pb="5rem">
+          <ProjectsList />
+        </Box>
       </section>
-      <section id="contact"> </section>
+      <section id="contact">
+        <Box pb="5rem">
+          <ContactForm />
+        </Box>
+      </section>
     </Stack>
   )
 }
