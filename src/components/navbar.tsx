@@ -10,7 +10,7 @@ export default function Navbar() {
     <Flex
       as="nav"
       bg={useColorModeValue('purple.600', 'purple.300')}
-      p={5}
+      p={1}
       color={useColorModeValue('gray.700', 'gray.200')}
       flexDirection={{ base: 'row', md: 'column' }}
       justify="space-between"
@@ -24,7 +24,12 @@ export default function Navbar() {
     >
       <LogoVariant />
       <MenuItems flexDirection={{ base: 'row', md: 'column' }} />
-      <Flex flexDirection={{ base: 'row', md: 'column' }} gap={2}>
+      <Flex
+        flexDirection={{ base: 'row', md: 'column' }}
+        mt={{ base: '2px', sm: 'inherit' }}
+        ml="1em"
+        gap={2}
+      >
         <ThemeToggle />
         <Button
           color={useColorModeValue('white', 'black')}
