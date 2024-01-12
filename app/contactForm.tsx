@@ -11,7 +11,6 @@ import {
   Text,
   Textarea,
   VStack,
-  useClipboard,
   useColorModeValue,
   useToast,
 } from '@chakra-ui/react'
@@ -25,7 +24,6 @@ type FormData = {
 }
 
 export default function ContactForm() {
-  const { hasCopied, onCopy } = useClipboard('pelletierdorian@gmail.com')
   const { register, handleSubmit, formState } = useForm<FormData>()
   const toast = useToast()
 

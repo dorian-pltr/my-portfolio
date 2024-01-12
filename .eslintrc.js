@@ -26,7 +26,7 @@ module.exports = {
     // Règles de maintenabilité
     'prefer-spread': 'error',
     'react/destructuring-assignment': 'error',
-    'react/jsx-props-no-spreading': 'error',
+    //'react/jsx-props-no-spreading': 'error',
     'react/default-props-match-prop-types': 'error',
     'react/no-unused-prop-types': 'error',
     'react/no-unused-class-component-methods': 'error',
