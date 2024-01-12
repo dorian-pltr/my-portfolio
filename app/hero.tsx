@@ -11,6 +11,8 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { FaCalendar, FaEnvelope } from 'react-icons/fa'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import Slider from 'react-infinite-logo-slider'
 import { Link } from 'react-scroll/modules'
 import './globals.css'
