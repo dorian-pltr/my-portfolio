@@ -7,8 +7,8 @@ import technologiesList from './technologiesList'
 
 export default function ProjectCard({ name, id, status, technologies, images }: Readonly<Project>) {
   return (
-    <Link href={`/projects/${id}`} passHref>
-      <Center py={12}>
+    <Link href="#portfolio" passHref>
+      <Center py={5}>
         <Box
           p={6}
           maxW="330px"

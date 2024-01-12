@@ -1,56 +1,58 @@
-import { Button, Flex, ResponsiveValue } from '@chakra-ui/react'
+import { Button, Flex, ResponsiveValue, useColorModeValue } from '@chakra-ui/react'
 import { Property } from 'csstype'
-import NextLink from 'next/link'
+
+import { Link } from 'react-scroll'
 
 type FlexDirection = Property.FlexDirection
 type FlexWrap = Property.FlexWrap
 type JustifyContent = Property.JustifyContent
-type OnItemClickFunction = () => void
 
 interface MenuButtonProps {
   href: string
   children: React.ReactNode
-  onItemClick?: OnItemClickFunction
-  marginRight?: number
 }
 
 interface MenuItemsProps {
   flexDirection?: ResponsiveValue<FlexDirection>
   flexWrap?: ResponsiveValue<FlexWrap>
   justifyContent?: ResponsiveValue<JustifyContent>
-  onItemClick?: OnItemClickFunction
 }
 
-const MenuButton = ({ href, children, onItemClick, marginRight }: MenuButtonProps) => (
-  <Button
-    as={NextLink}
-    href={href}
-    mr={marginRight}
-    variant="ghost"
-    justifyContent="flex-start"
-    onClick={onItemClick}
+const MenuButton = ({ href, children }: MenuButtonProps) => (
+  <Link
+    activeClass={useColorModeValue('activeLight', 'activeDark')}
+    to={href}
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
   >
-    {children}
-  </Button>
+    <Button
+      variant="ghost"
+      color={useColorModeValue('white', 'black')}
+      colorScheme="white"
+      justifyContent="flex-start"
+      size={{ base: 'xs', sm: 'sm', md: 'md' }}
+      fontWeight="bold"
+    >
+      {children}
+    </Button>
+  </Link>
 )
 
-export default function MenuItems({
-  flexDirection,
-  flexWrap,
-  justifyContent,
-  onItemClick,
-}: MenuItemsProps) {
+export default function MenuItems({ flexDirection, flexWrap, justifyContent }: MenuItemsProps) {
   return (
-    <Flex flexDirection={flexDirection} flexWrap={flexWrap} justifyContent={justifyContent}>
-      <MenuButton href="/" onItemClick={onItemClick} marginRight={4}>
-        Accueil
-      </MenuButton>
-      <MenuButton href="/projects" onItemClick={onItemClick} marginRight={4}>
-        Projets
-      </MenuButton>
-      <MenuButton href="/contact" onItemClick={onItemClick} marginRight={0}>
-        Me contacter
-      </MenuButton>
+    <Flex
+      flexDirection={flexDirection}
+      flexWrap={flexWrap}
+      justifyContent={justifyContent}
+      gap={{ base: 'inherit', md: '5rem' }}
+      alignItems="center"
+    >
+      <MenuButton href="home">Accueil</MenuButton>
+      <MenuButton href="about">À propos</MenuButton>
+      <MenuButton href="portfolio">Portfolio</MenuButton>
+      <MenuButton href="contact">Contact</MenuButton>
     </Flex>
   )
 }

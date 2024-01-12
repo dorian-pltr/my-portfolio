@@ -1,47 +1,44 @@
 import LogoVariant from '@/src/components/logoVariant'
-import { DownloadIcon } from '@chakra-ui/icons'
-import { Button, Center, Flex, Stack, useColorModeValue } from '@chakra-ui/react'
+import { Button, Flex, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { FaDownload } from 'react-icons/fa'
 import MenuItems from './menuItems'
-import NavbarDrawer from './navbarDrawer'
 import ThemeToggle from './themeToggle'
 
 export default function Navbar() {
   return (
     <Flex
       as="nav"
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg={useColorModeValue('purple.700', 'purple.300')}
       p={5}
       color={useColorModeValue('gray.700', 'gray.200')}
+      flexDirection={{ base: 'row', md: 'column' }}
       justify="space-between"
+      position="fixed"
+      zIndex={100}
+      width={{ base: '100%', md: '120px' }}
+      height={{ base: '70px', sm: '100px', md: '100%' }}
+      shadow="2xl"
+      bottom={{ base: '0', md: 'inherit' }}
       alignItems="center"
     >
-      <Stack mr={{ base: '5', lg: '150' }}>
-        <LogoVariant />
-      </Stack>
-
-      <Stack display={{ base: 'none', lg: 'inherit' }}>
-        <MenuItems />
-      </Stack>
-
-      <Center>
+      <LogoVariant />
+      <MenuItems flexDirection={{ base: 'row', md: 'column' }} />
+      <Flex flexDirection={{ base: 'row', md: 'column' }} gap={2}>
+        <ThemeToggle />
         <Button
+          colorScheme="white"
+          color={useColorModeValue('white', 'black')}
           as={NextLink}
           href={process.env.NEXT_CV_URL ?? ''}
           target="_blank"
-          colorScheme="pink"
-          mr={4}
-          ml={4}
-          leftIcon={<DownloadIcon />}
-          variant="solid"
+          variant="ghost"
+          leftIcon={<FaDownload />}
+          size={{ base: 'xs', sm: 'sm', md: 'md' }}
         >
           CV
         </Button>
-        <ThemeToggle />
-        <Stack ml={4} display={{ base: 'inherit', lg: 'none' }}>
-          <NavbarDrawer />
-        </Stack>
-      </Center>
+      </Flex>
     </Flex>
   )
 }
