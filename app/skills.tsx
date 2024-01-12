@@ -58,7 +58,7 @@ export default function Skills() {
       shadow="base"
       p={{ base: '1', lg: '6' }}
       rounded="xl"
-      paddingX={10}
+      paddingX={5}
       background={useColorModeValue('gray.50', 'gray.900')}
     >
       <Container textAlign="center" maxWidth="100%" padding={0}>
