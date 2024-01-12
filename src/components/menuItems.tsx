@@ -6,7 +6,6 @@ import { Link } from 'react-scroll'
 type FlexDirection = Property.FlexDirection
 type FlexWrap = Property.FlexWrap
 type JustifyContent = Property.JustifyContent
-type OnItemClickFunction = () => void
 
 interface MenuButtonProps {
   href: string
@@ -17,7 +16,6 @@ interface MenuItemsProps {
   flexDirection?: ResponsiveValue<FlexDirection>
   flexWrap?: ResponsiveValue<FlexWrap>
   justifyContent?: ResponsiveValue<JustifyContent>
-  onItemClick?: OnItemClickFunction
 }
 
 const MenuButton = ({ href, children }: MenuButtonProps) => (
@@ -42,12 +40,7 @@ const MenuButton = ({ href, children }: MenuButtonProps) => (
   </Link>
 )
 
-export default function MenuItems({
-  flexDirection,
-  flexWrap,
-  justifyContent,
-  onItemClick,
-}: MenuItemsProps) {
+export default function MenuItems({ flexDirection, flexWrap, justifyContent }: MenuItemsProps) {
   return (
     <Flex
       flexDirection={flexDirection}
@@ -56,18 +49,10 @@ export default function MenuItems({
       gap={{ base: 'inherit', md: '5rem' }}
       alignItems="center"
     >
-      <MenuButton href="home" onItemClick={onItemClick}>
-        Accueil
-      </MenuButton>
-      <MenuButton href="about" onItemClick={onItemClick}>
-        À propos
-      </MenuButton>
-      <MenuButton href="portfolio" onItemClick={onItemClick}>
-        Portfolio
-      </MenuButton>
-      <MenuButton href="contact" onItemClick={onItemClick}>
-        Contact
-      </MenuButton>
+      <MenuButton href="home">Accueil</MenuButton>
+      <MenuButton href="about">À propos</MenuButton>
+      <MenuButton href="portfolio">Portfolio</MenuButton>
+      <MenuButton href="contact">Contact</MenuButton>
     </Flex>
   )
 }
