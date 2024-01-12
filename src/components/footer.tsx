@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { FaCalendar, FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import SocialButton from './socialButton'
 
@@ -11,17 +11,18 @@ export default function Footer() {
       color={useColorModeValue('gray.700', 'gray.200')}
       mt={10}
     >
-      <Container
+      <Flex
         as={Stack}
+        flexDirection="column"
         maxW="6xl"
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}
-        mb={{ base: '100px', md: 0 }}
+        justify="center"
+        align="center"
+        mb={{ base: '70px', sm: '100px', md: 0 }}
       >
-        <Text>© {year} Dorian PELLETIER | Tous droits réservés</Text>
+        <Text align="center">© {year} Dorian PELLETIER | Tous droits réservés</Text>
         <Stack direction="row" spacing={6}>
           <SocialButton label="Calendly" href={process.env.NEXT_CALENDLY_URL ?? ''}>
             <FaCalendar />
@@ -33,7 +34,7 @@ export default function Footer() {
             <FaGithub />
           </SocialButton>
         </Stack>
-      </Container>
+      </Flex>
     </Box>
   )
 }

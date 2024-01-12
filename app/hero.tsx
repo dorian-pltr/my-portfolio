@@ -31,13 +31,13 @@ const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: num
 export default function Hero() {
   return (
     <>
-      <Stack direction={{ base: 'column', md: 'row' }} pb={{ base: 5, md: 20 }} gap={10}>
+      <Stack direction={{ base: 'column', lg: 'row' }} pb={{ base: 5, md: 20 }} gap={10}>
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
             <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
-              <Text align={{ base: 'center', md: 'left' }}>Hello, je suis</Text>
+              <Text align={{ base: 'center', lg: 'left' }}>Hello, je suis</Text>
               <Text
-                align={{ base: 'center', md: 'left' }}
+                align={{ base: 'center', lg: 'left' }}
                 bgGradient="linear(to-r, purple.400, pink.400, yellow.400)"
                 bgClip="text"
                 fontWeight="extrabold"
@@ -55,16 +55,16 @@ export default function Hero() {
                   minWidth="auto"
                   _hover={{ transform: 'scale(1.1)' }}
                   transition="1s"
-                  display={{ base: 'inherit', md: 'none' }}
+                  display={{ base: 'inherit', lg: 'none' }}
                 />
               </Center>
-              <Text mt={50} align={{ base: 'center', md: 'left' }}>
+              <Text mt={50} align={{ base: 'center', lg: 'left' }}>
                 Votre développeur Full Stack
               </Text>
               <Stack
                 mt={5}
-                align={{ base: 'center', md: 'left' }}
-                justify={{ base: 'center', md: 'left' }}
+                align={{ base: 'center', lg: 'left' }}
+                justify={{ base: 'center', lg: 'left' }}
                 direction="row"
                 flexWrap="wrap"
               >
@@ -103,7 +103,13 @@ export default function Hero() {
               >
                 ~ $
               </Text>
-              <Text fontSize="xl" as="samp" color="gray.500">
+              <Text
+                fontSize="xl"
+                as="samp"
+                color="gray.500"
+                textAlign="justify"
+                justifyContent="inter-word"
+              >
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
                 besoins et trouver la meilleure façon de collaborer
@@ -154,7 +160,7 @@ export default function Hero() {
               minWidth="auto"
               _hover={{ transform: 'scale(1.1)' }}
               transition="1s"
-              display={{ base: 'none', md: 'inherit' }}
+              display={{ base: 'none', lg: 'inherit' }}
             />
           </Center>
         </Flex>

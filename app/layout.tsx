@@ -33,10 +33,12 @@ export default function Layout({ children }: DashboardLayoutProps) {
         <Provider value={client}>
           <Providers>
             <Navbar />
-            <Stack pl={{ base: '0', md: '100px' }}>{children}</Stack>
-            <footer>
-              <Footer />
-            </footer>
+            <Stack pl={{ base: '0', md: '120px' }}>
+              {children}
+              <footer>
+                <Footer />
+              </footer>
+            </Stack>
           </Providers>
         </Provider>
       </body>

@@ -1,6 +1,7 @@
-import { Button, Flex, ResponsiveValue } from '@chakra-ui/react'
+import { Button, Flex, ResponsiveValue, useColorModeValue } from '@chakra-ui/react'
 import { Property } from 'csstype'
-import NextLink from 'next/link'
+
+import { Link } from 'react-scroll'
 
 type FlexDirection = Property.FlexDirection
 type FlexWrap = Property.FlexWrap
@@ -10,7 +11,6 @@ type OnItemClickFunction = () => void
 interface MenuButtonProps {
   href: string
   children: React.ReactNode
-  onItemClick?: OnItemClickFunction
 }
 
 interface MenuItemsProps {
@@ -20,18 +20,26 @@ interface MenuItemsProps {
   onItemClick?: OnItemClickFunction
 }
 
-const MenuButton = ({ href, children, onItemClick }: MenuButtonProps) => (
-  <Button
-    as={NextLink}
-    href={href}
-    variant="ghost"
-    justifyContent="flex-start"
-    onClick={onItemClick}
-    size={{ base: 'xs', sm: 'sm', md: 'md' }}
-    transform={{ base: 'none', md: 'rotate(270deg)' }}
+const MenuButton = ({ href, children }: MenuButtonProps) => (
+  <Link
+    activeClass={useColorModeValue('activeLight', 'activeDark')}
+    to={href}
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
   >
-    {children}
-  </Button>
+    <Button
+      variant="ghost"
+      color={useColorModeValue('white', 'black')}
+      colorScheme="white"
+      justifyContent="flex-start"
+      size={{ base: 'xs', sm: 'sm', md: 'md' }}
+      fontWeight="bold"
+    >
+      {children}
+    </Button>
+  </Link>
 )
 
 export default function MenuItems({
@@ -48,16 +56,16 @@ export default function MenuItems({
       gap={{ base: 'inherit', md: '5rem' }}
       alignItems="center"
     >
-      <MenuButton href="/" onItemClick={onItemClick}>
+      <MenuButton href="home" onItemClick={onItemClick}>
         Accueil
       </MenuButton>
-      <MenuButton href="#about" onItemClick={onItemClick}>
+      <MenuButton href="about" onItemClick={onItemClick}>
         À propos
       </MenuButton>
-      <MenuButton href="#portfolio" onItemClick={onItemClick}>
+      <MenuButton href="portfolio" onItemClick={onItemClick}>
         Portfolio
       </MenuButton>
-      <MenuButton href="#contact" onItemClick={onItemClick}>
+      <MenuButton href="contact" onItemClick={onItemClick}>
         Contact
       </MenuButton>
     </Flex>

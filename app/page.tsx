@@ -7,8 +7,10 @@ import Skills from './skills'
 
 export default function Page() {
   return (
-    <Stack p={{ base: '10', md: '20' }}>
-      <Hero />
+    <Stack p={{ base: '5', md: '10' }}>
+      <section id="home">
+        <Hero />
+      </section>
       <section id="about">
         <Box pt="50">
           <Skills />

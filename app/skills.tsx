@@ -82,7 +82,7 @@ export default function Skills() {
           borderColor={{ base: 'none', lg: 'gray.500' }}
           justifyContent="space-evenly"
         >
-          <Text fontSize="xl">
+          <Text fontSize="xl" textAlign="justify" justifyContent="inter-word">
             Je suis un <b>développeur Fullstack</b> spécialisé dans la création d&apos;applications
             modernes et performantes. Fort de mon expérience, je collabore étroitement avec des{' '}
             <b>startups, petites, moyennes et grandes entreprises</b> pour les accompagner dans
