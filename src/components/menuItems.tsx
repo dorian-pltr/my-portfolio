@@ -11,7 +11,6 @@ interface MenuButtonProps {
   href: string
   children: React.ReactNode
   onItemClick?: OnItemClickFunction
-  marginRight?: number
 }
 
 interface MenuItemsProps {
@@ -21,14 +20,15 @@ interface MenuItemsProps {
   onItemClick?: OnItemClickFunction
 }
 
-const MenuButton = ({ href, children, onItemClick, marginRight }: MenuButtonProps) => (
+const MenuButton = ({ href, children, onItemClick }: MenuButtonProps) => (
   <Button
     as={NextLink}
     href={href}
-    mr={marginRight}
     variant="ghost"
     justifyContent="flex-start"
     onClick={onItemClick}
+    size={{ base: 'sm', sm: 'md' }}
+    transform={{ base: 'none', md: 'rotate(270deg)' }}
   >
     {children}
   </Button>
@@ -41,15 +41,24 @@ export default function MenuItems({
   onItemClick,
 }: MenuItemsProps) {
   return (
-    <Flex flexDirection={flexDirection} flexWrap={flexWrap} justifyContent={justifyContent}>
-      <MenuButton href="/" onItemClick={onItemClick} marginRight={4}>
+    <Flex
+      flexDirection={flexDirection}
+      flexWrap={flexWrap}
+      justifyContent={justifyContent}
+      gap={{ base: 'inherit', md: '5rem' }}
+      alignItems="center"
+    >
+      <MenuButton href="/" onItemClick={onItemClick}>
         Accueil
       </MenuButton>
-      <MenuButton href="/projects" onItemClick={onItemClick} marginRight={4}>
-        Projets
+      <MenuButton href="#about" onItemClick={onItemClick}>
+        À propos
       </MenuButton>
-      <MenuButton href="/contact" onItemClick={onItemClick} marginRight={0}>
-        Me contacter
+      <MenuButton href="#portfolio" onItemClick={onItemClick}>
+        Portfolio
+      </MenuButton>
+      <MenuButton href="#contact" onItemClick={onItemClick}>
+        Contact
       </MenuButton>
     </Flex>
   )

@@ -12,6 +12,7 @@ export default function ThemeToggle() {
       icon={colorMode === 'light' ? <Icon as={FaMoon} /> : <Icon as={FaSun} />}
       color={colorMode === 'light' ? 'black' : 'white'}
       onClick={toggleColorMode}
+      size={{ base: 'sm', sm: 'md' }}
     />
   )
 }

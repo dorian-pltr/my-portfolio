@@ -5,6 +5,7 @@ import Navbar from '@/src/components/navbar'
 import React from 'react'
 import { Providers } from './providers'
 
+import { Stack } from '@chakra-ui/react'
 import { Provider, createClient, fetchExchange } from 'urql'
 
 const client = createClient({
@@ -31,10 +32,8 @@ export default function Layout({ children }: DashboardLayoutProps) {
       <body>
         <Provider value={client}>
           <Providers>
-            <nav>
-              <Navbar />
-            </nav>
-            {children}
+            <Navbar />
+            <Stack pl={{ base: '0', md: '100px' }}>{children}</Stack>
             <footer>
               <Footer />
             </footer>
