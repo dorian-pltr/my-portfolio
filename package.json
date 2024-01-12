@@ -21,6 +21,7 @@
     "@types/react-dom": "18.2.7",
     "@types/react-scroll": "^1.8.10",
     "autoprefixer": "10.4.14",
+    "card3d": "^2.6.5",
     "eslint-plugin-react": "^7.33.1",
     "framer-motion": "^10.16.1",
     "graphql": "^16.8.1",

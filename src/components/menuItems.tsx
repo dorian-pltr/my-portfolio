@@ -28,9 +28,9 @@ const MenuButton = ({ href, children }: MenuButtonProps) => (
     duration={500}
   >
     <Button
-      variant="ghost"
+      variant="unstyled"
       color={useColorModeValue('white', 'black')}
-      colorScheme="white"
+      _hover={{ bg: useColorModeValue('purple.700', 'purple.400') }}
       justifyContent="flex-start"
       size={{ base: 'xs', sm: 'sm', md: 'md' }}
       fontWeight="bold"

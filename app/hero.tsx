@@ -116,7 +116,7 @@ export default function Hero() {
               >
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
-                besoins et trouver la meilleure façon de collaborer
+                besoins et trouver la meilleure façon de collaborer{' '}
                 <span className="blinking">▐</span>
               </Text>
             </Flex>
@@ -172,21 +172,20 @@ export default function Hero() {
       </Stack>
       <Stack py="1rem">
         <Slider
-          width="300px"
           duration={40}
           pauseOnHover={true}
           blurBorders={true}
           blurBoderColor={useColorModeValue('white', '#1A202C')}
         >
           <Slider.Slide>
-            {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 30)}
+            {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 60)}
           </Slider.Slide>
           <Slider.Slide>
             {companyLogo(
               'images/fi.png',
               'Force Interactive',
               'https://www.forceinteractive.fr/',
-              35
+              70
             )}
           </Slider.Slide>
           <Slider.Slide>

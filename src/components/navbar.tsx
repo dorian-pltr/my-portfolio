@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <Flex
       as="nav"
-      bg={useColorModeValue('purple.700', 'purple.300')}
+      bg={useColorModeValue('purple.600', 'purple.300')}
       p={5}
       color={useColorModeValue('gray.700', 'gray.200')}
       flexDirection={{ base: 'row', md: 'column' }}
@@ -27,8 +27,8 @@ export default function Navbar() {
       <Flex flexDirection={{ base: 'row', md: 'column' }} gap={2}>
         <ThemeToggle />
         <Button
-          colorScheme="white"
           color={useColorModeValue('white', 'black')}
+          _hover={{ bg: useColorModeValue('purple.700', 'purple.400') }}
           as={NextLink}
           href={process.env.NEXT_CV_URL ?? ''}
           target="_blank"
