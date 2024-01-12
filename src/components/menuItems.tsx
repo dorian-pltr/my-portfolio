@@ -27,7 +27,7 @@ const MenuButton = ({ href, children, onItemClick }: MenuButtonProps) => (
     variant="ghost"
     justifyContent="flex-start"
     onClick={onItemClick}
-    size={{ base: 'sm', sm: 'md' }}
+    size={{ base: 'xs', sm: 'sm', md: 'md' }}
     transform={{ base: 'none', md: 'rotate(270deg)' }}
   >
     {children}

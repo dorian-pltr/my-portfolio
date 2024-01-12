@@ -31,7 +31,7 @@ export default function Navbar() {
           target="_blank"
           colorScheme="pink"
           variant="solid"
-          size={{ base: 'sm', sm: 'md' }}
+          size={{ base: 'xs', sm: 'sm', md: 'md' }}
         >
           CV
         </Button>
