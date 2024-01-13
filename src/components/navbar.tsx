@@ -13,12 +13,13 @@ export default function Navbar() {
       p={1}
       color={useColorModeValue('gray.700', 'gray.200')}
       flexDirection={{ base: 'row', md: 'column' }}
+      py={{ base: 'inherit', sm: 10 }}
       justify="space-between"
       position="fixed"
       zIndex={100}
       width={{ base: '100%', md: '120px' }}
       height={{ base: '70px', sm: '100px', md: '100%' }}
-      shadow="2xl"
+      shadow="dark-lg"
       bottom={{ base: '0', md: 'inherit' }}
       alignItems="center"
     >
@@ -26,8 +27,8 @@ export default function Navbar() {
       <MenuItems flexDirection={{ base: 'row', md: 'column' }} />
       <Flex
         flexDirection={{ base: 'row', md: 'column' }}
-        mt={{ base: '2px', sm: 'inherit' }}
-        ml="1em"
+        mt={{ base: '2px', md: 10 }}
+        ml={{ base: 1, sm: 'inherit' }}
         gap={2}
       >
         <ThemeToggle />

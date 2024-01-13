@@ -18,6 +18,7 @@ export default function Footer() {
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
+        ml={{ base: 'inherit', md: '20' }}
         justify="center"
         align="center"
         mb={{ base: '70px', sm: '100px', md: 0 }}

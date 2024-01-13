@@ -10,6 +10,7 @@ export default function LogoVariant() {
       fontSize="xl"
       fontWeight="bold"
       display={{ base: 'none', md: 'inherit' }}
+      mb={{ base: 'inherit', md: 10 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
