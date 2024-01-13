@@ -2,7 +2,7 @@ import { Link, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 export default function LogoVariant() {
-  const logoColor = useColorModeValue('white', 'black')
+  const logoColor = useColorModeValue('white', '#1A202C')
   return (
     <Link
       as={NextLink}

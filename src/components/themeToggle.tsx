@@ -8,9 +8,9 @@ export default function ThemeToggle() {
     <IconButton
       variant="ghost"
       aria-label="Dark Mode"
-      _hover={{ bg: useColorModeValue('purple.700', 'purple.400') }}
+      _hover={{ bg: useColorModeValue('purple.600', 'purple.300') }}
       icon={colorMode === 'light' ? <Icon as={FaMoon} /> : <Icon as={FaSun} />}
-      color={colorMode === 'light' ? 'white' : 'black'}
+      color={colorMode === 'light' ? 'white' : 'gray.800'}
       onClick={toggleColorMode}
       size={{ base: 'xs', sm: 'sm', md: 'md' }}
     />

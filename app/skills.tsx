@@ -61,10 +61,10 @@ export default function Skills() {
       paddingX={5}
       background={useColorModeValue('gray.50', 'gray.900')}
     >
-      <Container textAlign="center" maxWidth="100%">
+      <Container textAlign="center" maxWidth="100%" padding={0}>
         <Heading
           fontSize={{ base: '3xl', lg: '4xl' }}
-          paddingX={{ base: 'inherit', md: '100px', xl: '200px' }}
+          paddingX={{ base: 'inherit', md: '50px', xl: '200px' }}
           pb={10}
         >
           <Text

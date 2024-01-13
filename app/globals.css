@@ -27,12 +27,12 @@
 
 /* Applied when the "activeLight" class is present */
 .activeLight > * {
-    background: #553C9A;
+    background: #6B46C1;
 }
 
 /* Applied when the "activeDark" class is present */
 .activeDark  > * {
-    background: #9F79EA;
+    background: #B794F4;
 }
 
 div[id^="slider_"]>* {
