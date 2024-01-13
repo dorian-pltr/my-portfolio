@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <Flex
       as="nav"
-      bg={useColorModeValue('purple.600', 'purple.300')}
+      bg={useColorModeValue('purple.500', 'purple.200')}
       p={1}
       color={useColorModeValue('gray.700', 'gray.200')}
       flexDirection={{ base: 'row', md: 'column' }}
