@@ -2701,6 +2701,11 @@ capital-case@^1.0.4:
     tslib "^2.0.3"
     upper-case-first "^2.0.2"
 
+card3d@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.npmjs.org/card3d/-/card3d-2.6.5.tgz#5d9df6c5eb2877c256bf23f28ebeed070a6669b8"
+  integrity sha512-XeEuqsYJoB1NoC/HcHkpxxKRVNHzQK3Kt/fcykFe3NAoxsRKLWxbNzXfevp2AsQFl/GRecFszaRdApjWUjlssQ==
+
 chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"

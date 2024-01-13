@@ -1,4 +1,4 @@
-import { Icon, IconButton, useColorMode } from '@chakra-ui/react'
+import { Icon, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
 export default function ThemeToggle() {
@@ -8,7 +8,7 @@ export default function ThemeToggle() {
     <IconButton
       variant="ghost"
       aria-label="Dark Mode"
-      colorScheme="white"
+      _hover={{ bg: useColorModeValue('purple.700', 'purple.400') }}
       icon={colorMode === 'light' ? <Icon as={FaMoon} /> : <Icon as={FaSun} />}
       color={colorMode === 'light' ? 'white' : 'black'}
       onClick={toggleColorMode}

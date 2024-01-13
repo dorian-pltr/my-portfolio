@@ -17,19 +17,15 @@ import Slider from 'react-infinite-logo-slider'
 import { Link } from 'react-scroll/modules'
 import './globals.css'
 
-const companyLogo = (imageSrc: string, name: string, url: string, maxHeight: number) => {
+const companyLogo = (imageSrc: string, name: string) => {
   return (
-    <a href={url} target="_blank" rel="noreferrer">
-      <Image
-        alt={name}
-        filter="contrast(0)"
-        transition="1s"
-        _hover={{ filter: 'contrast(1)' }}
-        maxHeight={maxHeight}
-        src={imageSrc}
-        minWidth="auto"
-      />
-    </a>
+    <Image
+      alt={name}
+      filter="contrast(0)"
+      transition="1s"
+      _hover={{ filter: 'contrast(1)' }}
+      src={imageSrc}
+    />
   )
 }
 export default function Hero() {
@@ -111,12 +107,11 @@ export default function Hero() {
                 fontSize="xl"
                 as="samp"
                 color="gray.500"
-                textAlign="justify"
-                justifyContent="inter-word"
+                textAlign={{ base: 'inherit', sm: 'justify' }}
               >
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
-                besoins et trouver la meilleure façon de collaborer
+                besoins et trouver la meilleure façon de collaborer{' '}
                 <span className="blinking">▐</span>
               </Text>
             </Flex>
@@ -172,30 +167,15 @@ export default function Hero() {
       </Stack>
       <Stack py="1rem">
         <Slider
-          width="300px"
-          duration={40}
-          pauseOnHover={true}
-          blurBorders={true}
+          width="250px"
+          duration={20}
+          blurBorders={false}
           blurBoderColor={useColorModeValue('white', '#1A202C')}
         >
+          <Slider.Slide>{companyLogo('images/urbasolar.png', 'Urbasolar')}</Slider.Slide>
+          <Slider.Slide>{companyLogo('images/fi.png', 'Force Interactive')}</Slider.Slide>
           <Slider.Slide>
-            {companyLogo('images/urbasolar.png', 'Urbasolar', 'https://www.urbasolar.com/', 30)}
-          </Slider.Slide>
-          <Slider.Slide>
-            {companyLogo(
-              'images/fi.png',
-              'Force Interactive',
-              'https://www.forceinteractive.fr/',
-              35
-            )}
-          </Slider.Slide>
-          <Slider.Slide>
-            {companyLogo(
-              'images/fabop.png',
-              'La Fabrique Opéra Val de Loire',
-              'https://www.lafabriqueopera-valdeloire.com/',
-              70
-            )}
+            {companyLogo('images/fabop.png', 'La Fabrique Opéra Val de Loire')}
           </Slider.Slide>
         </Slider>
       </Stack>

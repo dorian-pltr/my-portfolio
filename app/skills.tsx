@@ -90,7 +90,7 @@ export default function Skills() {
           borderColor={{ base: 'none', lg: 'gray.500' }}
           justifyContent="space-evenly"
         >
-          <Text fontSize="xl" textAlign="justify">
+          <Text fontSize="xl" textAlign={{ base: 'inherit', sm: 'justify' }}>
             Mon expertise s&apos;étend particulièrement dans l&apos;écosystème <b>JavaScript</b>, où
             j&apos;utilise des technologies telles que <b>React, Node.js et Next.js.</b>
             <br />

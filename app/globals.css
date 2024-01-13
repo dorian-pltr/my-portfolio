@@ -24,10 +24,17 @@
     10.71429% { transform:translate(0,0) }
     100% { transform:translate(0,0) }
 }
-.activeLight {
-    border-bottom: 1px solid white;
+
+/* Applied when the "activeLight" class is present */
+.activeLight > * {
+    background: #553C9A;
 }
 
-.activeDark {
-    border-bottom: 1px solid black;
+/* Applied when the "activeDark" class is present */
+.activeDark  > * {
+    background: #9F79EA;
+}
+
+div[id^="slider_"]>* {
+    margin-right: 5em;
 }
