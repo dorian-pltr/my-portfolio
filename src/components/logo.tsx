@@ -1,8 +1,8 @@
-import NextLink from 'next/link'
 import { Link, useColorModeValue } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
 export default function Logo() {
-  const logoColor = useColorModeValue('black', 'white')
+  const logoColor = useColorModeValue('#1A202C', 'red')
   return (
     <Link as={NextLink} href="/" fontSize="xl" fontWeight="bold">
       <svg

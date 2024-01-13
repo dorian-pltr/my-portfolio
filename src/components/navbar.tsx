@@ -11,7 +11,6 @@ export default function Navbar() {
       as="nav"
       bg={useColorModeValue('purple.500', 'purple.200')}
       p={1}
-      color={useColorModeValue('gray.700', 'gray.200')}
       flexDirection={{ base: 'row', md: 'column' }}
       py={{ base: 'inherit', sm: 10 }}
       justify="space-between"
@@ -33,8 +32,8 @@ export default function Navbar() {
       >
         <ThemeToggle />
         <Button
-          color={useColorModeValue('white', 'black')}
-          _hover={{ bg: useColorModeValue('purple.700', 'purple.400') }}
+          color={useColorModeValue('white', 'gray.800')}
+          _hover={{ bg: useColorModeValue('purple.600', 'purple.300') }}
           as={NextLink}
           href={process.env.NEXT_CV_URL ?? ''}
           target="_blank"
