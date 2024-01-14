@@ -1,18 +1,42 @@
 'use client'
 
-import { Box, Flex, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react'
-import Link from 'next/link'
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  useColorModeValue,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 import { Project } from '../types'
 import technologiesList from './technologiesList'
 
-export default function ProjectCard({ name, status, technologies, images }: Readonly<Project>) {
+export default function ProjectCard({
+  name,
+  status,
+  technologies,
+  images,
+  description,
+}: Readonly<Project>) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const initializeCard3d = async () => {
       if (cardRef.current) {
-        /* Dynamically import the card3d library within the useEffect hook to ensure that it is only 
+        /* Dynamically import the card3d library within the useEffect hook to ensure that it is only
         loaded on the client side where the document object is available */
         const { default: Card3d } = await import('card3d')
 
@@ -31,7 +55,7 @@ export default function ProjectCard({ name, status, technologies, images }: Read
   }, [])
 
   return (
-    <Link href="#portfolio" passHref>
+    <>
       <Flex
         p={6}
         flexDirection="column"
@@ -43,6 +67,7 @@ export default function ProjectCard({ name, status, technologies, images }: Read
         ref={cardRef}
         className="card"
         data-card3d=""
+        onClick={onOpen}
       >
         <Box rounded="lg">
           {images && (
@@ -67,6 +92,43 @@ export default function ProjectCard({ name, status, technologies, images }: Read
           </Flex>
         </Flex>
       </Flex>
-    </Link>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{name}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Flex flexDirection="column" alignContent="center" justifyContent="center" gap={5}>
+              <Carousel
+                showThumbs={false}
+                showStatus={false}
+                showIndicators={false}
+                showArrows={true}
+                autoPlay={true}
+              >
+                {images?.map((image, index) => (
+                  <Image
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={index}
+                    rounded="lg"
+                    height="200px"
+                    width="200px"
+                    objectFit="cover"
+                    src={image.url}
+                    alt={name}
+                  />
+                ))}
+              </Carousel>
+              {description}
+              <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
+                {technologies && technologiesList(technologies)}
+              </Flex>
+            </Flex>
+          </ModalBody>
+
+          <ModalFooter></ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   )
 }

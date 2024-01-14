@@ -15,7 +15,7 @@ export default function ProjectsList() {
 
   return (
     <Stack>
-      <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
+      <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
         <Text
           align="center"
           color={useColorModeValue('pink.500', 'pink.200')}

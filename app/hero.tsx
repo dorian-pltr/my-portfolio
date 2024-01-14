@@ -34,11 +34,14 @@ export default function Hero() {
       <Stack direction={{ base: 'column', lg: 'row' }} pb={{ base: 5, md: 20 }} gap={10}>
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
-            <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
+            <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
               <Text align={{ base: 'center', lg: 'left' }}>Hello, je suis</Text>
               <Text
                 align={{ base: 'center', lg: 'left' }}
-                bgGradient="linear(to-r, purple.400, pink.400, yellow.400)"
+                bgGradient={useColorModeValue(
+                  'linear(to-r, purple.500, pink.600, yellow.600)',
+                  'linear(to-r, purple.200, pink.200, yellow.200)'
+                )}
                 bgClip="text"
                 fontWeight="extrabold"
               >
@@ -103,12 +106,7 @@ export default function Hero() {
               >
                 ~ $
               </Text>
-              <Text
-                fontSize="xl"
-                as="samp"
-                color="gray.500"
-                textAlign={{ base: 'inherit', sm: 'justify' }}
-              >
+              <Text fontSize="xl" as="samp" color="gray.500" textAlign="justify">
                 Quels que soient vos projets, qu&apos;ils soient de courte ou de longue durée, je
                 vous encourage vivement à me contacter afin que nous puissions discuter de vos
                 besoins et trouver la meilleure façon de collaborer{' '}
