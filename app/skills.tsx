@@ -106,7 +106,7 @@ export default function Skills() {
               défis techniques.
             </b>{' '}
             Je suis passionné par l&apos;apprentissage continu et la montée en compétences, ce qui
-            me permet de rester à la pointe des dernières avancées technologiques.
+            me permet de rester à la pointe des dernières mises à jour et avancées technologiques.
           </Text>
         </Flex>
         <Flex
