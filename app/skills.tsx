@@ -69,7 +69,8 @@ export default function Skills() {
         >
           <Text
             align="center"
-            color={useColorModeValue('purple.600', 'purple.200')}
+            colorScheme="purple"
+            color={useColorModeValue('purple.500', 'purple.200')}
             fontWeight="extrabold"
           >
             Bénéficiez de mes {totalExperience.yearDiff} ans d&apos;expérience en développement Full

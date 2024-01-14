@@ -38,7 +38,10 @@ export default function Hero() {
               <Text align={{ base: 'center', lg: 'left' }}>Hello, je suis</Text>
               <Text
                 align={{ base: 'center', lg: 'left' }}
-                bgGradient="linear(to-r, purple.400, pink.400, yellow.400)"
+                bgGradient={useColorModeValue(
+                  'linear(to-r, purple.500, pink.600, yellow.600)',
+                  'linear(to-r, purple.200, pink.200, yellow.200)'
+                )}
                 bgClip="text"
                 fontWeight="extrabold"
               >

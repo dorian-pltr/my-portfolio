@@ -18,7 +18,7 @@ export default function ProjectsList() {
       <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
         <Text
           align="center"
-          color={useColorModeValue('pink.500', 'pink.200')}
+          color={useColorModeValue('pink.600', 'pink.200')}
           fontWeight="extrabold"
           pb={10}
         >

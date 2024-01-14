@@ -33,6 +33,7 @@
     "react-i18next": "^13.0.3",
     "react-icons": "^4.10.1",
     "react-infinite-logo-slider": "^1.0.13",
+    "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.9.0",
     "urql": "^4.0.6"
   },

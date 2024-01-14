@@ -71,7 +71,7 @@ export default function ContactForm() {
         <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
           <Text
             align="center"
-            color={useColorModeValue('purple.600', 'purple.200')}
+            color={useColorModeValue('purple.500', 'purple.200')}
             fontWeight="extrabold"
             mb={5}
           >
@@ -122,7 +122,7 @@ export default function ContactForm() {
             icon={hasCopied ? <FaEnvelopeOpenText /> : <FaEnvelope />}
             bg={useColorModeValue('gray.50', 'gray.900')}
             _hover={{
-              bg: useColorModeValue('pink.500', 'pink.200'),
+              bg: useColorModeValue('pink.600', 'pink.200'),
               color: useColorModeValue('white', 'gray.700'),
             }}
             onClick={onCopy}
@@ -139,7 +139,7 @@ export default function ContactForm() {
             icon={<FaGithub />}
             bg={useColorModeValue('gray.50', 'gray.900')}
             _hover={{
-              bg: useColorModeValue('pink.500', 'pink.200'),
+              bg: useColorModeValue('pink.600', 'pink.200'),
               color: useColorModeValue('white', 'gray.700'),
             }}
             isRound
@@ -155,7 +155,7 @@ export default function ContactForm() {
             icon={<FaLinkedinIn />}
             bg={useColorModeValue('gray.50', 'gray.900')}
             _hover={{
-              bg: useColorModeValue('pink.500', 'pink.200'),
+              bg: useColorModeValue('pink.600', 'pink.200'),
               color: useColorModeValue('white', 'gray.700'),
             }}
             isRound
@@ -171,7 +171,7 @@ export default function ContactForm() {
             icon={<FaCalendar />}
             bg={useColorModeValue('gray.50', 'gray.900')}
             _hover={{
-              bg: useColorModeValue('pink.500', 'pink.200'),
+              bg: useColorModeValue('pink.600', 'pink.200'),
               color: useColorModeValue('white', 'gray.700'),
             }}
             isRound
