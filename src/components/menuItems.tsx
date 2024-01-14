@@ -24,7 +24,6 @@ const MenuButton = ({ href, children }: MenuButtonProps) => (
     to={href}
     spy={true}
     smooth={true}
-    offset={-70}
     duration={500}
   >
     <Button

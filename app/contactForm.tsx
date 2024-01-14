@@ -68,7 +68,7 @@ export default function ContactForm() {
         rounded="xl"
         background={useColorModeValue('gray.50', 'gray.900')}
       >
-        <Heading fontSize={{ base: '4xl', md: '4xl', lg: '5xl' }}>
+        <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
           <Text
             align="center"
             color={useColorModeValue('purple.500', 'purple.200')}

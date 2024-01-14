@@ -63,7 +63,7 @@ export default function Skills() {
     >
       <Container textAlign="center" maxWidth="100%" padding={0}>
         <Heading
-          fontSize={{ base: '3xl', lg: '4xl' }}
+          fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
           paddingX={{ base: 'inherit', md: '50px', xl: '200px' }}
           pb={10}
         >

@@ -1,7 +1,23 @@
 'use client'
 
-import { Box, Flex, Heading, Image, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  useColorModeValue,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
+import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import { Project } from '../types'
@@ -76,6 +92,43 @@ export default function ProjectCard({
           </Flex>
         </Flex>
       </Flex>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{name}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Flex flexDirection="column" alignContent="center" justifyContent="center" gap={5}>
+              <Carousel
+                showThumbs={false}
+                showStatus={false}
+                showIndicators={false}
+                showArrows={true}
+                autoPlay={true}
+              >
+                {images?.map((image, index) => (
+                  <Image
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={index}
+                    rounded="lg"
+                    height="200px"
+                    width="200px"
+                    objectFit="cover"
+                    src={image.url}
+                    alt={name}
+                  />
+                ))}
+              </Carousel>
+              {description}
+              <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
+                {technologies && technologiesList(technologies)}
+              </Flex>
+            </Flex>
+          </ModalBody>
+
+          <ModalFooter></ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   )
 }
