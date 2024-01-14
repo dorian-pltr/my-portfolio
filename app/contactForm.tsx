@@ -54,130 +54,132 @@ export default function ContactForm() {
   }
 
   return (
-    <Flex
-      flexDirection={{ base: 'column-reverse', lg: 'row' }}
-      justifyContent="space-evenly"
-      gap={10}
-    >
-      <Flex
-        flex={0.6}
-        flexDirection="column"
-        shadow="base"
-        py={10}
-        px={5}
-        rounded="xl"
-        background={useColorModeValue('gray.50', 'gray.900')}
-      >
-        <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
-          <Text
-            align="center"
-            color={useColorModeValue('purple.500', 'purple.200')}
-            fontWeight="extrabold"
-            mb={5}
-          >
-            Me contacter
-          </Text>
-        </Heading>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <VStack spacing={4}>
-            <FormControl id="fullName">
-              <FormLabel size="xl">Nom complet</FormLabel>
-              <Input {...register('fullName', { required: true })} />
-            </FormControl>
-
-            <FormControl id="email">
-              <FormLabel>Email</FormLabel>
-              <Input type="email" {...register('email', { required: true })} />
-            </FormControl>
-
-            <FormControl id="message">
-              <FormLabel>Message</FormLabel>
-              <Textarea {...register('message', { required: true })} />
-            </FormControl>
-
-            <Button
-              type="submit"
-              isLoading={formState.isSubmitting}
-              colorScheme="purple"
-              leftIcon={<FaPaperPlane />}
-              mt={5}
-            >
-              Envoyer
-            </Button>
-          </VStack>
-        </form>
-      </Flex>
-      <Flex justify="space-evenly" direction={{ base: 'row', lg: 'column' }}>
-        <Tooltip
-          label={hasCopied ? 'Email copié !' : "Copier l'email"}
-          closeOnClick={false}
-          hasArrow
+    <>
+      <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
+        <Text
+          align="center"
+          color={useColorModeValue('purple.500', 'purple.200')}
+          fontWeight="extrabold"
+          pb={10}
         >
-          <IconButton
-            aria-label="email"
-            variant="ghost"
-            size="lg"
-            fontSize="3xl"
-            shadow="md"
-            icon={hasCopied ? <FaEnvelopeOpenText /> : <FaEnvelope />}
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            _hover={{
-              bg: useColorModeValue('pink.600', 'pink.200'),
-              color: useColorModeValue('white', 'gray.700'),
-            }}
-            onClick={onCopy}
-            isRound
-          />
-        </Tooltip>
-        <Box as="a" href={process.env.NEXT_GITHUB_URL ?? ''} target="_blank">
-          <IconButton
-            aria-label="github"
-            variant="ghost"
-            size="lg"
-            fontSize="3xl"
-            shadow="md"
-            icon={<FaGithub />}
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            _hover={{
-              bg: useColorModeValue('pink.600', 'pink.200'),
-              color: useColorModeValue('white', 'gray.700'),
-            }}
-            isRound
-          />
-        </Box>
-        <Box as="a" href={process.env.NEXT_LINKEDIN_URL ?? ''} target="_blank">
-          <IconButton
-            aria-label="linkedin"
-            variant="ghost"
-            size="lg"
-            fontSize="3xl"
-            shadow="md"
-            icon={<FaLinkedinIn />}
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            _hover={{
-              bg: useColorModeValue('pink.600', 'pink.200'),
-              color: useColorModeValue('white', 'gray.700'),
-            }}
-            isRound
-          />
-        </Box>
-        <Box as="a" href={process.env.NEXT_CALENDLY_URL ?? ''} target="_blank">
-          <IconButton
-            aria-label="calendly"
-            variant="ghost"
-            size="lg"
-            fontSize="3xl"
-            shadow="md"
-            icon={<FaCalendar />}
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            _hover={{
-              bg: useColorModeValue('pink.600', 'pink.200'),
-              color: useColorModeValue('white', 'gray.700'),
-            }}
-            isRound
-          />
-        </Box>
+          Me contacter
+        </Text>
+      </Heading>
+      <Flex
+        flexDirection={{ base: 'column-reverse', lg: 'row' }}
+        justifyContent="space-evenly"
+        gap={10}
+      >
+        <Flex
+          flex={0.6}
+          flexDirection="column"
+          shadow="base"
+          py={10}
+          px={5}
+          rounded="xl"
+          background={useColorModeValue('gray.50', 'gray.900')}
+        >
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <VStack spacing={4}>
+              <FormControl id="fullName">
+                <FormLabel size="xl">Nom complet</FormLabel>
+                <Input {...register('fullName', { required: true })} />
+              </FormControl>
+
+              <FormControl id="email">
+                <FormLabel>Email</FormLabel>
+                <Input type="email" {...register('email', { required: true })} />
+              </FormControl>
+
+              <FormControl id="message">
+                <FormLabel>Message</FormLabel>
+                <Textarea {...register('message', { required: true })} />
+              </FormControl>
+
+              <Button
+                type="submit"
+                isLoading={formState.isSubmitting}
+                colorScheme="purple"
+                leftIcon={<FaPaperPlane />}
+                mt={5}
+              >
+                Envoyer
+              </Button>
+            </VStack>
+          </form>
+        </Flex>
+        <Flex justify="space-evenly" direction={{ base: 'row', lg: 'column' }}>
+          <Tooltip
+            label={hasCopied ? 'Email copié !' : "Copier l'email"}
+            closeOnClick={false}
+            hasArrow
+          >
+            <IconButton
+              aria-label="email"
+              variant="ghost"
+              size="lg"
+              fontSize="3xl"
+              shadow="md"
+              icon={hasCopied ? <FaEnvelopeOpenText /> : <FaEnvelope />}
+              bg={useColorModeValue('gray.50', 'gray.900')}
+              _hover={{
+                bg: useColorModeValue('pink.600', 'pink.200'),
+                color: useColorModeValue('white', 'gray.700'),
+              }}
+              onClick={onCopy}
+              isRound
+            />
+          </Tooltip>
+          <Box as="a" href={process.env.NEXT_GITHUB_URL ?? ''} target="_blank">
+            <IconButton
+              aria-label="github"
+              variant="ghost"
+              size="lg"
+              fontSize="3xl"
+              shadow="md"
+              icon={<FaGithub />}
+              bg={useColorModeValue('gray.50', 'gray.900')}
+              _hover={{
+                bg: useColorModeValue('pink.600', 'pink.200'),
+                color: useColorModeValue('white', 'gray.700'),
+              }}
+              isRound
+            />
+          </Box>
+          <Box as="a" href={process.env.NEXT_LINKEDIN_URL ?? ''} target="_blank">
+            <IconButton
+              aria-label="linkedin"
+              variant="ghost"
+              size="lg"
+              fontSize="3xl"
+              shadow="md"
+              icon={<FaLinkedinIn />}
+              bg={useColorModeValue('gray.50', 'gray.900')}
+              _hover={{
+                bg: useColorModeValue('pink.600', 'pink.200'),
+                color: useColorModeValue('white', 'gray.700'),
+              }}
+              isRound
+            />
+          </Box>
+          <Box as="a" href={process.env.NEXT_CALENDLY_URL ?? ''} target="_blank">
+            <IconButton
+              aria-label="calendly"
+              variant="ghost"
+              size="lg"
+              fontSize="3xl"
+              shadow="md"
+              icon={<FaCalendar />}
+              bg={useColorModeValue('gray.50', 'gray.900')}
+              _hover={{
+                bg: useColorModeValue('pink.600', 'pink.200'),
+                color: useColorModeValue('white', 'gray.700'),
+              }}
+              isRound
+            />
+          </Box>
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   )
 }

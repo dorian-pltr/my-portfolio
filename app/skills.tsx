@@ -91,8 +91,8 @@ export default function Skills() {
           borderColor={{ base: 'none', lg: 'gray.500' }}
           justifyContent="space-evenly"
         >
-          <Text fontSize="xl" textAlign={{ base: 'inherit', sm: 'justify' }}>
-            Mon expertise s&apos;étend particulièrement dans l&apos;écosystème <b>JavaScript</b>, où
+          <Text fontSize="xl" textAlign="justify">
+            Mon expertise s&apos;étend avant tout dans l&apos;écosystème <b>JavaScript</b>, où
             j&apos;utilise des technologies telles que <b>React, Node.js et Next.js.</b>
             <br />
             <br />
@@ -106,7 +106,7 @@ export default function Skills() {
               défis techniques.
             </b>{' '}
             Je suis passionné par l&apos;apprentissage continu et la montée en compétences, ce qui
-            me permet de rester à la pointe des dernières avancées technologiques !
+            me permet de rester à la pointe des dernières avancées technologiques.
           </Text>
         </Flex>
         <Flex
