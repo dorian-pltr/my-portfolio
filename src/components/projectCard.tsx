@@ -12,7 +12,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Text,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
@@ -21,6 +20,7 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import { Project } from '../types'
+import ProjectStatus from './projectStatus'
 import technologiesList from './technologiesList'
 
 export default function ProjectCard({
@@ -45,7 +45,7 @@ export default function ProjectCard({
           // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
           const card = new Card3d(cardRef.current, {
             glare: true,
-            glareOpacity: 0.1,
+            glareOpacity: 0.05,
           })
         }
       }
@@ -74,7 +74,7 @@ export default function ProjectCard({
             <Image
               rounded="lg"
               height="200px"
-              width="200px"
+              width="400px"
               objectFit="cover"
               src={images[0].url}
               alt={name}
@@ -86,7 +86,7 @@ export default function ProjectCard({
           <Heading textAlign="center" fontSize="2xl" fontFamily="body" fontWeight={800}>
             {name}
           </Heading>
-          <Text fontSize="xl">{status?.name}</Text>
+          <ProjectStatus status={status.name} />
           <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
             {technologies && technologiesList(technologies)}
           </Flex>
@@ -95,7 +95,9 @@ export default function ProjectCard({
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{name}</ModalHeader>
+          <ModalHeader textAlign="center" fontSize="3xl" fontWeight="extrabold">
+            {name}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Flex flexDirection="column" alignContent="center" justifyContent="center" gap={5}>
@@ -119,7 +121,9 @@ export default function ProjectCard({
                   />
                 ))}
               </Carousel>
-              {description}
+              <Flex textAlign="center" fontSize="xl">
+                {description}
+              </Flex>
               <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
                 {technologies && technologiesList(technologies)}
               </Flex>

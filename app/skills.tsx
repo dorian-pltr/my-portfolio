@@ -1,19 +1,9 @@
 'use client'
 
-import { Badge, Box, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
-
-const frontTechnologies = ['React', 'Next.js', 'Redux', 'Routing', 'TypeScript', 'HTML', 'CSS']
-const backTechnologies = [
-  'Node.JS',
-  'Express',
-  'GraphQL',
-  'PostgreSQL',
-  'MySQL',
-  'MongoDB',
-  'InfluxDB',
-]
-const projectManagement = ['GIT', 'Agile et Scrum', 'Jira', 'Confluence', 'Trello']
-const lowCode = ['Airtable', 'Zapier', 'Power Automate', 'WordPress']
+import TechnologyCard from '@/src/components/technologyCard'
+import { Box, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
+import { FaNodeJs, FaPhp, FaReact } from 'react-icons/fa'
+import { SiMongodb, SiNestjs, SiNextdotjs, SiPostgresql, SiTypescript } from 'react-icons/si'
 
 const differenceDates = (stringStartDate: string, stringEndDate?: string | undefined) => {
   const startDate = new Date(stringStartDate)
@@ -25,30 +15,6 @@ const differenceDates = (stringStartDate: string, stringEndDate?: string | undef
     monthDiff += 12
   }
   return { yearDiff, monthDiff }
-}
-
-const skillsList = (title: string, skills: Array<string>, colorScheme: string) => {
-  return (
-    <Box>
-      <Heading fontSize="xl" mt={5} mb={3}>
-        {title}
-      </Heading>
-      <Flex wrap="wrap" alignContent="flex-start" justifyContent="flex-start" gap={2}>
-        {skills.map(feature => (
-          <Badge
-            colorScheme={colorScheme}
-            key={feature}
-            rounded="3xl"
-            size="sm"
-            p={2}
-            variant="outline"
-          >
-            {feature}
-          </Badge>
-        ))}
-      </Flex>
-    </Box>
-  )
 }
 
 const totalExperience = differenceDates('2020-01-01')
@@ -64,12 +30,11 @@ export default function Skills() {
       <Container textAlign="center" maxWidth="100%" padding={0}>
         <Heading
           fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
-          paddingX={{ base: 'inherit', md: '50px', xl: '200px' }}
-          pb={10}
+          paddingX={{ base: 'inherit', md: '50px', xl: '100px' }}
+          pb="1em"
         >
           <Text
             align="center"
-            colorScheme="purple"
             color={useColorModeValue('purple.500', 'purple.200')}
             fontWeight="extrabold"
           >
@@ -79,10 +44,10 @@ export default function Skills() {
         </Heading>
       </Container>
 
-      <Flex flexDirection={{ base: 'column', lg: 'row' }}>
+      <Flex flexDirection={{ base: 'column', lg: 'row' }} alignItems="center">
         <Flex
-          flex={0.5}
           gap={10}
+          flexBasis="50%"
           flexDirection="column"
           pr={{ base: '0', lg: '10' }}
           pb={5}
@@ -110,19 +75,21 @@ export default function Skills() {
           </Text>
         </Flex>
         <Flex
-          flex={0.5}
           pl={{ base: '0', lg: '10' }}
-          marginBottom={7}
+          flexBasis="50%"
+          flexDirection="row"
+          justifyContent={{ base: 'center', lg: 'flex-start' }}
+          height="100%"
           wrap="wrap"
-          gap={2}
-          flexDirection="column"
-          justify="center"
-          width="100%"
         >
-          {skillsList('Front-End', frontTechnologies, 'pink')}
-          {skillsList('Back-End', backTechnologies, 'purple')}
-          {skillsList('Gestion de projet', projectManagement, 'yellow')}
-          {skillsList('Low Code', lowCode, useColorModeValue('blackAlpha', 'gray'))}
+          <TechnologyCard name="React" icon={FaReact} />
+          <TechnologyCard name="Next.js" icon={SiNextdotjs} />
+          <TechnologyCard name="Node.js" icon={FaNodeJs} />
+          <TechnologyCard name="NestJS" icon={SiNestjs} />
+          <TechnologyCard name="TypeScript" icon={SiTypescript} />
+          <TechnologyCard name="PHP" icon={FaPhp} />
+          <TechnologyCard name="MongoDB" icon={SiMongodb} />
+          <TechnologyCard name="PostgreSQL" icon={SiPostgresql} />
         </Flex>
       </Flex>
     </Box>

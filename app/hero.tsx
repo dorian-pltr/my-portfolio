@@ -35,7 +35,9 @@ export default function Hero() {
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
             <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
-              <Text align={{ base: 'center', lg: 'left' }}>Hello, je suis</Text>
+              <Text align={{ base: 'center', lg: 'left' }} fontWeight="normal">
+                <b>Hello</b>, je suis
+              </Text>
               <Text
                 align={{ base: 'center', lg: 'left' }}
                 bgGradient={useColorModeValue(
@@ -61,8 +63,8 @@ export default function Hero() {
                   display={{ base: 'inherit', lg: 'none' }}
                 />
               </Center>
-              <Text mt={50} align={{ base: 'center', lg: 'left' }}>
-                Votre développeur Full Stack
+              <Text mt={50} align={{ base: 'center', lg: 'left' }} fontWeight="normal">
+                Votre développeur <b>Full Stack</b>
               </Text>
               <Stack
                 mt={5}

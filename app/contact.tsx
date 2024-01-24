@@ -33,7 +33,7 @@ type FormData = {
   message: string
 }
 
-export default function ContactForm() {
+export default function COntact() {
   const { register, handleSubmit, formState } = useForm<FormData>()
   const toast = useToast()
 
@@ -60,7 +60,7 @@ export default function ContactForm() {
           align="center"
           color={useColorModeValue('purple.500', 'purple.200')}
           fontWeight="extrabold"
-          pb={10}
+          pb="1em"
         >
           Me contacter
         </Text>

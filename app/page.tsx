@@ -1,9 +1,9 @@
 'use client'
 import { Flex, Stack } from '@chakra-ui/react'
-import ContactForm from './contactForm'
+import Contact from './contact'
 import './globals.css'
 import Hero from './hero'
-import ProjectsList from './projectsList'
+import Portfolio from './portfolio'
 import Skills from './skills'
 
 export default function Page() {
@@ -27,7 +27,7 @@ export default function Page() {
       </section>
       <section id="portfolio">
         <Flex pb="5rem" minHeight="100vh" flexDirection="column" justifyContent="center">
-          <ProjectsList />
+          <Portfolio />
         </Flex>
       </section>
       <section id="contact">
@@ -37,7 +37,7 @@ export default function Page() {
           flexDirection="column"
           justifyContent="center"
         >
-          <ContactForm />
+          <Contact />
         </Flex>
       </section>
     </Stack>
