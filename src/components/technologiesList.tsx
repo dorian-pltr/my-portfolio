@@ -9,9 +9,13 @@ export default function technologiesList(technologies: Array<Technology>) {
     'Low Code': 'yellow',
   }
 
+  const sortedTechnologies = [...technologies].sort((a, b) =>
+    a.type.name.localeCompare(b.type.name)
+  )
+
   return (
     <>
-      {technologies.map(technology => (
+      {sortedTechnologies.map(technology => (
         <Badge
           key={technology.id}
           rounded="3xl"
