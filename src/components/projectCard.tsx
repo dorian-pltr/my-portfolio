@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Button,
   Flex,
   Heading,
   Image,
@@ -12,15 +13,17 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Text,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
 import { useEffect, useRef } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
+import { FaExternalLinkAlt } from 'react-icons/fa'
 import { Project } from '../types'
+import ProjectStatus from './projectStatus'
 import technologiesList from './technologiesList'
 
 export default function ProjectCard({
@@ -29,6 +32,7 @@ export default function ProjectCard({
   technologies,
   images,
   description,
+  url,
 }: Readonly<Project>) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const cardRef = useRef<HTMLDivElement>(null)
@@ -44,8 +48,7 @@ export default function ProjectCard({
         if (cardRef.current) {
           // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
           const card = new Card3d(cardRef.current, {
-            glare: true,
-            glareOpacity: 0.1,
+            reverse: true,
           })
         }
       }
@@ -65,16 +68,14 @@ export default function ProjectCard({
         pos="relative"
         shadow="md"
         ref={cardRef}
-        className="card"
-        data-card3d=""
         onClick={onOpen}
       >
         <Box rounded="lg">
           {images && (
             <Image
               rounded="lg"
-              height="200px"
-              width="200px"
+              height="225px"
+              width="400px"
               objectFit="cover"
               src={images[0].url}
               alt={name}
@@ -86,7 +87,7 @@ export default function ProjectCard({
           <Heading textAlign="center" fontSize="2xl" fontFamily="body" fontWeight={800}>
             {name}
           </Heading>
-          <Text fontSize="xl">{status?.name}</Text>
+          {ProjectStatus(status.name)}
           <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
             {technologies && technologiesList(technologies)}
           </Flex>
@@ -94,11 +95,13 @@ export default function ProjectCard({
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{name}</ModalHeader>
+        <ModalContent backgroundColor={useColorModeValue('gray.50', 'gray.900')}>
+          <ModalHeader textAlign="center" fontSize="3xl" fontWeight="extrabold">
+            {name}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Flex flexDirection="column" alignContent="center" justifyContent="center" gap={5}>
+            <Flex flexDirection="column" alignContent="center" justifyContent="center" gap={10}>
               <Carousel
                 showThumbs={false}
                 showStatus={false}
@@ -111,21 +114,35 @@ export default function ProjectCard({
                     // eslint-disable-next-line react/no-array-index-key
                     key={index}
                     rounded="lg"
-                    height="200px"
-                    width="200px"
+                    height="225px"
+                    width="400px"
                     objectFit="cover"
                     src={image.url}
                     alt={name}
                   />
                 ))}
               </Carousel>
-              {description}
+              <Flex justifyContent="center">{ProjectStatus(status.name)}</Flex>
+              <Flex textAlign="center" fontSize="xl">
+                {description}
+              </Flex>
               <Flex gap={2} flexWrap="wrap" justifyContent="center" flexDirection="row">
                 {technologies && technologiesList(technologies)}
               </Flex>
+              {url && (
+                <Button
+                  as={NextLink}
+                  rounded="xl"
+                  colorScheme="purple"
+                  href={url}
+                  target="_blank"
+                  leftIcon={<FaExternalLinkAlt />}
+                >
+                  Ouvrir
+                </Button>
+              )}
             </Flex>
           </ModalBody>
-
           <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>

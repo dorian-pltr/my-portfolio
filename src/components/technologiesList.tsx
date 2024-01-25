@@ -16,7 +16,7 @@ export default function technologiesList(technologies: Array<Technology>) {
           key={technology.id}
           rounded="3xl"
           p={2}
-          variant="outline"
+          variant="subtle"
           colorScheme={technologyColor[technology.type.name]}
         >
           {technology.name}

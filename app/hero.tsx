@@ -1,5 +1,4 @@
 import {
-  Badge,
   Button,
   Center,
   Flex,
@@ -35,11 +34,13 @@ export default function Hero() {
         <Flex flex={0.6} align="center" justify="center">
           <Stack spacing={6} w="full">
             <Heading fontSize={{ base: '4xl', lg: '5xl' }}>
-              <Text align={{ base: 'center', lg: 'left' }}>Hello, je suis</Text>
+              <Text align={{ base: 'center', lg: 'left' }} fontWeight="normal">
+                <b>Hello</b>, je suis
+              </Text>
               <Text
                 align={{ base: 'center', lg: 'left' }}
                 bgGradient={useColorModeValue(
-                  'linear(to-r, purple.500, pink.600, yellow.600)',
+                  'linear(to-r, purple.500, pink.600, yellow.400)',
                   'linear(to-r, purple.200, pink.200, yellow.200)'
                 )}
                 bgClip="text"
@@ -61,26 +62,9 @@ export default function Hero() {
                   display={{ base: 'inherit', lg: 'none' }}
                 />
               </Center>
-              <Text mt={50} align={{ base: 'center', lg: 'left' }}>
-                Votre développeur Full Stack
+              <Text mt={50} align={{ base: 'center', lg: 'left' }} fontWeight="normal">
+                Votre développeur <b>Full Stack</b>
               </Text>
-              <Stack
-                mt={5}
-                align={{ base: 'center', lg: 'left' }}
-                justify={{ base: 'center', lg: 'left' }}
-                direction="row"
-                flexWrap="wrap"
-              >
-                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
-                  React
-                </Badge>
-                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
-                  Next.js
-                </Badge>
-                <Badge colorScheme="purple" rounded="3xl" size="sm" p={2} mr={2} variant="outline">
-                  Node.js
-                </Badge>
-              </Stack>
             </Heading>
             <Flex
               flexDirection="row"
@@ -122,6 +106,16 @@ export default function Hero() {
               mt={{ base: '5', md: '0' }}
               mb={{ base: '5', md: '0' }}
             >
+              <Button
+                as={NextLink}
+                rounded="xl"
+                colorScheme="purple"
+                href={process.env.NEXT_CALENDLY_URL ?? ''}
+                target="_blank"
+                leftIcon={<FaCalendar />}
+              >
+                Prendre RDV
+              </Button>
               <Link to="contact" spy={true} smooth={true} duration={500}>
                 <Button
                   rounded="xl"
@@ -133,17 +127,6 @@ export default function Hero() {
                   Me contacter
                 </Button>
               </Link>
-
-              <Button
-                as={NextLink}
-                rounded="xl"
-                colorScheme="purple"
-                href={process.env.NEXT_CALENDLY_URL ?? ''}
-                target="_blank"
-                leftIcon={<FaCalendar />}
-              >
-                Prendre RDV
-              </Button>
             </Stack>
           </Stack>
         </Flex>
