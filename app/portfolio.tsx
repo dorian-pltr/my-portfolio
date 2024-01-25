@@ -1,6 +1,6 @@
 // ...
 import ProjectCard from '@/src/components/projectCard'
-import { GetProjectsDocument } from '@/src/graphql/generated'
+import { GetProjectsDocument, ProjectStatus } from '@/src/graphql/generated'
 import { Projects as ProjectsType } from '@/src/types'
 import { Flex, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { useQuery } from 'urql'
@@ -11,6 +11,36 @@ export default function Portfolio() {
   })
 
   const projects = (results.data?.project as ProjectsType) ?? null
+
+  type StatusOrder = {
+    [key: string]: number
+  }
+
+  const statusOrder: StatusOrder = {
+    'À faire': 1,
+    'En cours': 2,
+    Terminé: 3,
+    'En attente': 4,
+    Annulé: 5,
+  }
+
+  const sortedProjects = projects
+    ? projects.slice().sort((a, b) => {
+        const statusA = (a.status as ProjectStatus)?.name || ''
+        const statusB = (b.status as ProjectStatus)?.name || ''
+
+        const orderA = statusOrder[statusA]
+        const orderB = statusOrder[statusB]
+
+        if (orderA < orderB) return -1
+        if (orderA > orderB) return 1
+
+        if (a.name < b.name) return -1
+        if (a.name > b.name) return 1
+
+        return 0
+      })
+    : []
 
   return (
     <Stack>
@@ -25,8 +55,8 @@ export default function Portfolio() {
         </Text>
       </Heading>
       <Flex gap={10} justifyContent="center" wrap="wrap">
-        {projects ? (
-          projects.map(project => (
+        {sortedProjects ? (
+          sortedProjects.map(project => (
             <ProjectCard
               name={project.name}
               id={project.id}
@@ -35,8 +65,9 @@ export default function Portfolio() {
               images={project.images}
               key={project.id}
               description={project.description}
-              startDate={undefined}
               url={project.url}
+              startDate={project.startDate}
+              endDate={project.endDate}
             />
           ))
         ) : (

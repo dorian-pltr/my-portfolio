@@ -38,3 +38,7 @@
 div[id^="slider_"]>* {
     margin-right: 5em;
 }
+
+button.control-arrow {
+    background-color: #B794F4 !important;
+}
