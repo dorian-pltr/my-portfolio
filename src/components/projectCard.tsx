@@ -16,6 +16,8 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
+import { format } from 'date-fns'
+import { fr } from 'date-fns/locale'
 import NextLink from 'next/link'
 import { useEffect, useRef } from 'react'
 import { Carousel } from 'react-responsive-carousel'
@@ -26,6 +28,23 @@ import { Project } from '../types'
 import ProjectStatus from './projectStatus'
 import technologiesList from './technologiesList'
 
+const formatDate = (date: Date) => {
+  return format(date, 'd MMMM yyyy', { locale: fr })
+}
+
+const displayedDate = (startDate: Project['startDate'], endDate: Project['endDate']) => {
+  if (startDate && endDate) {
+    return `Depuis le ${formatDate(endDate)}`
+  }
+  if (startDate) {
+    return `Depuis le ${formatDate(startDate)}`
+  }
+  if (endDate) {
+    return `Jusqu'au ${formatDate(endDate)}`
+  }
+  return ''
+}
+
 export default function ProjectCard({
   name,
   status,
@@ -33,6 +52,8 @@ export default function ProjectCard({
   images,
   description,
   url,
+  startDate,
+  endDate,
 }: Readonly<Project>) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const cardRef = useRef<HTMLDivElement>(null)
@@ -122,7 +143,10 @@ export default function ProjectCard({
                   />
                 ))}
               </Carousel>
-              <Flex justifyContent="center">{ProjectStatus(status.name)}</Flex>
+              <Flex alignItems="center" flexDirection="column">
+                {ProjectStatus(status.name)}
+                {displayedDate(startDate, endDate)}
+              </Flex>
               <Flex textAlign="center" fontSize="xl">
                 {description}
               </Flex>

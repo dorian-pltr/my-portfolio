@@ -31,10 +31,13 @@ export default function TechnologyCard({
 
   return (
     <Stack
-      bgGradient={useColorModeValue(
-        'linear(to-r, purple.500, pink.600, yellow.400)',
-        'linear(to-r, purple.200, pink.200, yellow.200)'
-      )}
+      bgGradient={{
+        base: useColorModeValue('gray.50', 'gray.900'),
+        md: useColorModeValue(
+          'linear(to-r, purple.500, pink.600, yellow.400)',
+          'linear(to-r, purple.200, pink.200, yellow.200)'
+        ),
+      }}
     >
       <Flex
         flexDirection="column"
