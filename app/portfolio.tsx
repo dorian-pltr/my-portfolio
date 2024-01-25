@@ -36,6 +36,7 @@ export default function Portfolio() {
               key={project.id}
               description={project.description}
               startDate={undefined}
+              url={project.url}
             />
           ))
         ) : (

@@ -5,6 +5,7 @@ query GetProjects {
     description
     startDate
     endDate
+    url
     status {
       id
       name

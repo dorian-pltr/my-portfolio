@@ -21,7 +21,7 @@ export default function TechnologyCard({
         // Check if the component is still mounted before initializing
         if (cardRef.current) {
           // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-          const card = new Card3d(cardRef.current, {})
+          const card = new Card3d(cardRef.current, { reverse: true })
         }
       }
     }
@@ -30,11 +30,16 @@ export default function TechnologyCard({
   }, [])
 
   return (
-    <Stack bg={useColorModeValue('purple.500', 'purple.200')}>
+    <Stack
+      bgGradient={useColorModeValue(
+        'linear(to-r, purple.500, pink.600, yellow.400)',
+        'linear(to-r, purple.200, pink.200, yellow.200)'
+      )}
+    >
       <Flex
         flexDirection="column"
         p={5}
-        w={{ base: '7em', md: '10em' }}
+        w={{ base: '8em', md: '10em' }}
         gap={3}
         ref={cardRef}
         className="card"
