@@ -34,7 +34,7 @@ const formatDate = (date: Date) => {
 
 const displayedDate = (startDate: Project['startDate'], endDate: Project['endDate']) => {
   if (startDate && endDate) {
-    return `Depuis le ${formatDate(endDate)}`
+    return `Le ${formatDate(endDate)}`
   }
   if (startDate) {
     return `Depuis le ${formatDate(startDate)}`
