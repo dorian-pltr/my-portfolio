@@ -32,12 +32,18 @@ const formatDate = (date: Date) => {
   return format(date, 'd MMMM yyyy', { locale: fr })
 }
 
-const displayedDate = (startDate: Project['startDate'], endDate: Project['endDate']) => {
+const displayedDate = (
+  startDate: Project['startDate'],
+  endDate: Project['endDate'],
+  status: Project['status']
+) => {
   if (startDate && endDate) {
-    return `Depuis le ${formatDate(endDate)}`
+    return `Le ${formatDate(endDate)}`
   }
   if (startDate) {
-    return `Depuis le ${formatDate(startDate)}`
+    return status.name === 'En cours'
+      ? `Depuis le ${formatDate(startDate)}`
+      : `À partir du ${formatDate(startDate)}`
   }
   if (endDate) {
     return `Jusqu'au ${formatDate(endDate)}`
@@ -145,7 +151,7 @@ export default function ProjectCard({
               </Carousel>
               <Flex alignItems="center" flexDirection="column">
                 {ProjectStatus(status.name)}
-                {displayedDate(startDate, endDate)}
+                {displayedDate(startDate, endDate, status)}
               </Flex>
               <Flex textAlign="center" fontSize="xl">
                 {description}
