@@ -151,7 +151,7 @@ export default function ProjectCard({
               </Carousel>
               <Flex alignItems="center" flexDirection="column">
                 {ProjectStatus(status.name)}
-                {displayedDate(startDate, endDate)}
+                {displayedDate(startDate, endDate, status)}
               </Flex>
               <Flex textAlign="center" fontSize="xl">
                 {description}
