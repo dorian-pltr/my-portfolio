@@ -2,8 +2,15 @@
 
 import TechnologyCard from '@/src/components/technologyCard'
 import { Box, Container, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react'
-import { FaNodeJs, FaPhp, FaReact } from 'react-icons/fa'
-import { SiMongodb, SiNestjs, SiNextdotjs, SiPostgresql, SiTypescript } from 'react-icons/si'
+import { FaNodeJs, FaPhp, FaReact, FaVuejs } from 'react-icons/fa'
+import {
+  SiMongodb,
+  SiNestjs,
+  SiNextdotjs,
+  SiNuxtdotjs,
+  SiPostgresql,
+  SiTypescript,
+} from 'react-icons/si'
 
 const differenceDates = (stringStartDate: string, stringEndDate?: string | undefined) => {
   const startDate = new Date(stringStartDate)
@@ -58,7 +65,8 @@ export default function Skills() {
         >
           <Text fontSize="xl" textAlign="justify">
             Mon expertise s&apos;étend avant tout dans l&apos;écosystème <b>JavaScript</b>, où
-            j&apos;utilise des technologies telles que <b>React, Node.js et Next.js.</b>
+            j&apos;utilise des technologies telles que{' '}
+            <b>Vue.js/Nuxt.js, React/Next.js, Node.js et NestJS.</b>
             <br />
             <br />
             Que ce soit en tant que collaborateur en <b>CDI ou en freelance</b>, je m&apos;engage à
@@ -84,6 +92,8 @@ export default function Skills() {
         >
           <TechnologyCard name="React" icon={FaReact} />
           <TechnologyCard name="Next.js" icon={SiNextdotjs} />
+          <TechnologyCard name="Vue.js" icon={FaVuejs} />
+          <TechnologyCard name="Nuxt.js" icon={SiNuxtdotjs} />
           <TechnologyCard name="Node.js" icon={FaNodeJs} />
           <TechnologyCard name="NestJS" icon={SiNestjs} />
           <TechnologyCard name="TypeScript" icon={SiTypescript} />

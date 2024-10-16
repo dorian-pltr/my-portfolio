@@ -40,7 +40,7 @@ export default function Hero() {
               <Text
                 align={{ base: 'center', lg: 'left' }}
                 bgGradient={useColorModeValue(
-                  'linear(to-r, purple.500, pink.600, yellow.400)',
+                  'linear(to-r, pink.500, purple.500)',
                   'linear(to-r, purple.200, pink.200, yellow.200)'
                 )}
                 bgClip="text"
@@ -55,7 +55,7 @@ export default function Hero() {
                   alt="Mon portrait"
                   borderRadius="full"
                   maxHeight="200"
-                  src="images/color_portrait.png"
+                  src="images/portrait.png"
                   minWidth="auto"
                   _hover={{ transform: 'scale(1.1)' }}
                   transition="1s"
@@ -135,9 +135,8 @@ export default function Hero() {
             <Image
               alt="Mon portrait"
               borderRadius="full"
-              shadow="xl"
-              maxHeight="300"
-              src="images/color_portrait.png"
+              maxHeight="500"
+              src="images/portrait.png"
               minWidth="auto"
               _hover={{ transform: 'scale(1.1)' }}
               transition="1s"
@@ -150,13 +149,14 @@ export default function Hero() {
         <Slider
           width="250px"
           duration={20}
-          blurBorders={false}
+          blurBorders={true}
           blurBoderColor={useColorModeValue('white', '#1A202C')}
         >
-          <Slider.Slide>{companyLogo('images/urbasolar.png', 'Urbasolar')}</Slider.Slide>
-          <Slider.Slide>{companyLogo('images/fi.png', 'Force Interactive')}</Slider.Slide>
+          <Slider.Slide>{companyLogo('images/logos/kabolt.png', 'Kabolt')}</Slider.Slide>
+          <Slider.Slide>{companyLogo('images/logos/urbasolar.png', 'Urbasolar')}</Slider.Slide>
+          <Slider.Slide>{companyLogo('images/logos/fi.png', 'Force Interactive')}</Slider.Slide>
           <Slider.Slide>
-            {companyLogo('images/fabop.png', 'La Fabrique Opéra Val de Loire')}
+            {companyLogo('images/logos/fabop.png', 'La Fabrique Opéra Val de Loire')}
           </Slider.Slide>
         </Slider>
       </Stack>
