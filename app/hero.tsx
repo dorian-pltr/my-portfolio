@@ -141,6 +141,8 @@ export default function Hero() {
               _hover={{ transform: 'scale(1.1)' }}
               transition="1s"
               display={{ base: 'none', lg: 'inherit' }}
+              boxShadow="none"
+              border="none"
             />
           </Center>
         </Flex>
