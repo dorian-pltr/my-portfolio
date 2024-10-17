@@ -50,11 +50,8 @@ export default function Hero() {
               </Text>
               <Center>
                 <Image
-                  mt={50}
-                  shadow="xl"
                   alt="Mon portrait"
-                  borderRadius="full"
-                  maxHeight="200"
+                  maxHeight="300"
                   src="images/portrait.png"
                   minWidth="auto"
                   _hover={{ transform: 'scale(1.1)' }}
@@ -62,7 +59,7 @@ export default function Hero() {
                   display={{ base: 'inherit', lg: 'none' }}
                 />
               </Center>
-              <Text mt={50} align={{ base: 'center', lg: 'left' }} fontWeight="normal">
+              <Text align={{ base: 'center', lg: 'left' }} fontWeight="normal">
                 Votre développeur <b>Full Stack</b>
               </Text>
             </Heading>
@@ -134,7 +131,6 @@ export default function Hero() {
           <Center>
             <Image
               alt="Mon portrait"
-              borderRadius="full"
               maxHeight="500"
               src="images/portrait.png"
               minWidth="auto"
